@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import logo from "@/assets/images/logo_grey.png"
-import logoScrolled  from "@/assets/images/logo.png"
+import logoScrolled from "@/assets/images/logo.png"
 import { navLinks } from '@/static/menus'
 
 export default function Header() {
@@ -16,7 +16,7 @@ export default function Header() {
 
   const openNav = () => setIsOpen(true);
   const closeNav = () => setIsOpen(false);
-  
+
   // Sticky header on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -43,12 +43,12 @@ export default function Header() {
           <nav className="flex items-center justify-between h-16">
             <Link href="/" onClick={() => setIsOpen(false)}>
               {/* <Image src={logo} alt="Company Logo" width={150} /> */}
-                <Image
-                  src={isScrolled ? logoScrolled : logoScrolled}
-                  alt="Company Logo"
-                  width={150}
-                  priority
-                />
+              <Image
+                src={isScrolled ? logoScrolled : logoScrolled}
+                alt="Company Logo"
+                width={150}
+                priority
+              />
             </Link>
 
             {/* ================= DESKTOP MENU ================= */}
@@ -99,22 +99,18 @@ export default function Header() {
         </div>
 
         {/* ================= MOBILE DRAWER ================= */}
-        <div
-          className={`fixed top-0 right-0 h-full w-72 bg-white shadow-lg 
-                transform transition-transform duration-300 
-                md:hidden z-50
-                ${isOpen ? "translate-x-0" : "translate-x-full"}`}
-        >
+        <div className={`fixed top-0 right-0 h-full w-100 shadow-lg transform transition-transform duration-300 md:hidden z-50
+                ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
           {/* Drawer Header */}
-          <div className="flex items-center justify-between px-4 h-20">
+          {/* <div className="flex items-center justify-between px-4 h-20">
             <Link href="/" onClick={() => setIsOpen(false)}>
               <Image src={logo} alt="Liaisonbank" width={120} />
             </Link>
-               <button onClick={openNav}>Open Menu</button>
-          </div>
+            <button onClick={openNav}>Open Menu</button>
+          </div> */}
 
           {/* Drawer Menu */}
-          <ul className="submenu flex flex-col p-4 space-y-4">
+          <ul className="submenu flex flex-col p-4 space-y-4 d-none">
             {navLinks.map((link) => (
               <li key={link.name}>
 
@@ -163,19 +159,64 @@ export default function Header() {
             ))}
           </ul>
 
-           <div
-              id="myNav"
-              className="overlay"
-              style={{ width: isOpen ? "100%" : "0%" }}
-            >
-              <button className="closebtn" onClick={closeNav}>
-                &times;
-              </button>
+          <div
+            id="myNav"
+            className="overlay"
+            style={{ width: isOpen ? "100%" : "0%" }}
+          >
+            <button className="closebtn" onClick={closeNav}>
+              &times;
+            </button>
 
             <div className="overlay-content">
-              <a href="#">Home</a>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
+              <ul className="submenu flex flex-col p-4 space-y-4">
+                {navLinks.map((link) => (
+                  <li key={link.name}>
+
+                    {/* Main Link */}
+                    {link.href ? (
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="block font-medium"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() =>
+                          setOpenSubmenu(
+                            openSubmenu === link.name ? null : link.name
+                          )
+                        }
+                        className="flex justify-between w-full font-medium"
+                      >
+                        {link.name}
+                        <span>
+                          {openSubmenu === link.name ? "-" : "+"}
+                        </span>
+                      </button>
+                    )}
+
+                    {/* Mobile Submenu (Click Based) */}
+                    {link.submenu && openSubmenu === link.name && (
+                      <ul className="mt-2 ml-4 space-y-2">
+                        {link.submenu.map((sub) => (
+                          <li key={sub.name}>
+                            <Link
+                              href={sub.href}
+                              onClick={() => setIsOpen(false)}
+                              className="block text-sm text-gray-600"
+                            >
+                              {sub.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -188,7 +229,6 @@ export default function Header() {
           />
         )} */}
       </header>
-
     </>
   )
 }

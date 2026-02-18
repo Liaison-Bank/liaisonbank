@@ -1,8 +1,9 @@
 "use client";
 // import Image from "next/image";
-
+import Image from 'next/image'
 import useBodyClass from '@/components/useBodyClass'; // Adjust path as needed
 import Waves from "@/components/waves";
+import smallLogo from "@/assets/images/shape-small-1-1.png"
 
 const Home = () => {
   useBodyClass('home');
@@ -13,6 +14,32 @@ const Home = () => {
         <div className="inner-header"></div>
         <Waves />
       </div>
+      <section>
+        <div className="smallObject">
+          <Image
+            src={smallLogo}
+            alt=""
+            width={257}
+            height={257}
+            className="auto-rotate"
+            priority
+          />
+        </div>
+        <div className="container mx-auto p-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <div className="bg-blue-200 p-4 rounded">
+              <h2 className="text-xl font-semibold mb-2">Column 1</h2>
+              <p>This column will take up the full width on small screens and 50% on medium screens and above.</p>
+            </div>
+
+            <div className="bg-green-200 p-4 rounded">
+              <h2 className="text-xl font-semibold mb-2">Column 2</h2>
+              <p>This column behaves the same way, creating a perfect two-column fluid layout.</p>
+            </div>
+          </div>
+        </div>
+      </section >
 
       <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
@@ -49,6 +76,7 @@ const Home = () => {
           </a>
         </div>
       </div>
+      
     </>
   );
 };

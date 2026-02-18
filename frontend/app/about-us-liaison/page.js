@@ -1,9 +1,58 @@
+"use client";
+// import Image from "next/image";
+import Link from "next/link";
+import Script from 'next/script';
+import useBodyClass from '@/components/useBodyClass'; // Adjust path as needed
+import PageTitleWave from '@/components/PageTitleWave';
 
-
-export default function AboutUsLiaisonPage() {
+const AboutUsLiaisonPage = () => {
+  useBodyClass('about');
   return (
-    <>     
-      About Us
+    <>
+      {/* <Script
+        src="https://digitaladclicks.com/wp-content/themes/seoland/assets/js/particles.js?ver=6.9.1"
+        strategy="lazyOnload"
+        onLoad={() =>
+          console.log(`script loaded correctly, window.FB has been populated`)
+        }/><div id="particles-js"></div> */}
+      <div className="page-header">
+        <div className="inner-header">
+          <PageTitleWave />
+          <div className="page-title">
+            <div className="container">
+              <div className="row justify-content-center text-center">
+                <div className="col-lg-10">
+                  <div className="theme-breadcrumb-box">
+                    <h1>About Us</h1>
+
+                    <nav aria-label="breadcrumb" className="page-breadcrumb">
+                      <ol className="breadcrumb justify-content-center">
+                        <li className="breadcrumb-item">
+                          <Link href="/">
+                            <i className="bi bi-house-door me-1" aria-hidden="true"></i>
+                            Home
+                          </Link>
+                        </li>
+
+                        <li
+                          className="breadcrumb-item active"
+                          aria-current="page"
+                        >
+                          About Us
+                        </li>
+                      </ol>
+                    </nav>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section>
+        
+      </section>
       <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
         <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black">
           To get started, edit the page.js file.
@@ -35,7 +84,8 @@ export default function AboutUsLiaisonPage() {
         >
           Documentation
         </a>
-      </div></>
-
+      </div>
+    </>
   );
 }
+export default AboutUsLiaisonPage;
