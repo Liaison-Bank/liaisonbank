@@ -11,10 +11,13 @@ const Home = () => {
   return (
     <>
       <div className="page-header">
-        <div className="inner-header"></div>
+        <div className="inner-header">
+
+
+        </div>
         <Waves />
       </div>
-      <section>
+      <section className="position-relative">
         <div className="smallObject">
           <Image
             src={smallLogo}

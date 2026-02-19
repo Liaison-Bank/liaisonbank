@@ -1,7 +1,6 @@
 "use client";
 // import Image from "next/image";
 import Link from "next/link";
-import Script from 'next/script';
 import useBodyClass from '@/components/useBodyClass'; // Adjust path as needed
 import PageTitleWave from '@/components/PageTitleWave';
 
@@ -9,12 +8,6 @@ const AboutUsLiaisonPage = () => {
   useBodyClass('about');
   return (
     <>
-      {/* <Script
-        src="https://digitaladclicks.com/wp-content/themes/seoland/assets/js/particles.js?ver=6.9.1"
-        strategy="lazyOnload"
-        onLoad={() =>
-          console.log(`script loaded correctly, window.FB has been populated`)
-        }/><div id="particles-js"></div> */}
       <div className="page-header">
         <div className="inner-header">
           <PageTitleWave />
