@@ -1,7 +1,7 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
-import { footerLinks, informationLinks } from '../static/menus.jsx'
+import { importantLinks, informationLinks } from '../static/menus.jsx'
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function Footer() {
@@ -10,61 +10,40 @@ export default function Footer() {
       <footer className="text-white px-2 py-2 font-sans text-md">
         <div className="max-w-7xl mx-auto px-4 py-10 flex flex-wrap justify-between gap-10">
           <div className="flex flex-col max-w-xs flex-1 min-w-[200px]">
-            <h4 className="text-yellow-400 font-semibold mb-4 text-base">Office Address</h4>
+            <h4 className="text-yellow-400 font-semibold mb-4 text-base">Information</h4>
             <p className="leading-relaxed">
-              Plot No. 466, New Apollo CHS, 14th road, near Blue Tokai Coffee, Khar West, Mumbai- 400052
+              
             </p>
           </div>
 
           <div className="flex flex-col max-w-xs flex-1 min-w-[200px]">
             <h4 className="text-yellow-400 font-semibold mb-4 text-base">Important Links</h4>
             <ul>
-              {footerLinks.map(link => (
+              {importantLinks.map(link => (
                 <li key={link.name}>
                   <Link href={link.href}>{link.name}</Link>
                 </li>
               ))}
-              <li>
+              {/* <li>
                 <a href="/article" className="cursor-pointer hover:underline">Article</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="flex flex-col max-w-xs flex-1 min-w-[200px]">
-            <h4 className="text-yellow-400 font-semibold mb-4 text-base">Information</h4>
-            <ul>
-              {informationLinks.map(link => (
-                <li key={link.name}>
-                  <a href={link.href}>{link.name}</a>
-                </li>
-              ))}
-              {/* {[
-              { label: "Testimonials", href: "/testimonials" },
-              { label: "Contact Us", href: "/contact-us-liaison-bank" },
-              { label: "Privacy Policy", href: "/privacy-policy" },
-              { label: "Terms and Conditions", href: "/terms-conditions" }
-            ].map(({ label, href }) => (
-              <li key={label} className="border-b border-gray-700 py-2">
-                <a href={href} className="cursor-pointer hover:underline">{label}</a>
-              </li>
-            ))} */}
+              </li> */}
             </ul>
           </div>
 
           <div className="flex flex-col max-w-xs flex-1 min-w-[200px]">
             <h4 className="text-yellow-400 font-semibold mb-4 text-base">Quick Contacts</h4>
             <p className="mb-3">
-
+              Plot No. 466, New Apollo CHS, 14th road, near Blue Tokai Coffee, Khar West, Mumbai- 400052
             </p>
-            <p className="mb-3">
-              <strong className="block mb-1">Phone</strong>
-              (+91) 91364 43852/(+91) 9321709258
-            </p>
-            <p className="mb-3">
-              <strong className="block mb-1">Email</strong>
-              contact@liaisonbank.com
-            </p>
-            <p>Mon - Sat : 8:00am to 5pm</p>
+            <div className="mb-3 d-flex align-items-center phone">
+              <Image src="/phone.png" width={25} height={25} quality={75} alt="Call Us" loading="lazy"/>&nbsp; +91 91364 43852 / 932170 9258
+              </div>
+            <div className="mb-3 d-flex align-items-center mail">
+              <Image src="/mail.png" width={25} height={25} quality={75} alt="Eamil Us" loading="lazy"/>&nbsp; contact@liaisonbank.com
+              </div>
+            <div className="mb-3 d-flex align-items-center time">
+              <Image src="/timer.png" width={35} height={35} quality={75} alt="Office Time" loading="lazy"/>&nbsp; Mon - Sat : 8:00am to 5pm
+              </div>
           </div>
 
         </div>

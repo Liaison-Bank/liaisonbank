@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@fancyapps/ui": "^6.1.11",
     "@flaticon/flaticon-uicons": "^3.3.1",
     "@fontsource/josefin-sans": "^5.2.8",
     "@next/env": "^16.1.6",

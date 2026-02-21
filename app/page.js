@@ -11,9 +11,11 @@ import welcomeImg from "@/assets/images/group.jpg"
 import ceoImg from "@/assets/images/deva-CEO.jpg"
 import rightTick from "@/assets/images/rightTick.svg"
 import ClientScroller from "@/components/ClientScroller"
+import useFancybox from '@/components/useFancybox';
 
 const Home = () => {
   useBodyClass('home');
+  const fancyboxRef = useFancybox();
 
   return (
     <>
@@ -167,11 +169,91 @@ const Home = () => {
       </section>
 
       <section className="awardscertification">
-        <div className="container mx-auto  py-4 bg-white">
+        <div className="container mx-auto py-4 bg-white">
           <div className="section-title">
             <h3>Awards & Certifications</h3>
           </div>
-          <div>
+
+          {/* Fancybox Container */}
+          <div
+            ref={fancyboxRef}
+            className="row"
+          >
+            <div className="col-lg-2 col-md-2 col-sm-6 col-6">
+              <figure>
+                <a
+                  href="/certificate/rajasthanrestaurant.webp"
+                  className="fancybox"
+                  data-fancybox="gallery"
+                  data-caption="Rajasthan Restaurant"
+                >
+                  <Image
+                    src="/certificate/rajasthanrestaurant.webp"
+                    width={400}
+                    height={200}
+                    alt=""
+                    className="certificate"
+                  />
+                </a>
+              </figure>
+            </div>
+
+            <div className="col-lg-2 col-md-2 col-sm-6 col-6">
+              <figure>
+                <a
+                  href="/certificate/masabha.webp"
+                  className="fancybox"
+                  data-fancybox="gallery"
+                  data-caption="Masabha"
+                >
+                  <Image
+                    src="/certificate/masabha.webp"
+                    width={400}
+                    height={200}
+                    alt=""
+                    className="certificate"
+                  />
+                </a>
+              </figure>
+            </div>
+
+            <div className="col-lg-2 col-md-2 col-sm-6 col-6">
+              <figure>
+                <a
+                  href="/certificate/L&T.webp"
+                  className="fancybox"
+                  data-fancybox="gallery"
+                  data-caption="Larsen & Tubro"
+                >
+                  <Image
+                    src="/certificate/L&T.webp"
+                    width={400}
+                    height={200}
+                    alt=""
+                    className="certificate"
+                  />
+                </a>
+              </figure>
+            </div>
+
+            <div className="col-lg-2 col-md-2 col-sm-6 col-6">
+              <figure>
+                <a
+                  href="/certificate/certificate1.webp"
+                  className="fancybox"
+                  data-fancybox="gallery"
+                  data-caption="Sunbeam Gorukrupa Developers"
+                >
+                  <Image
+                    src="/certificate/certificate1.webp"
+                    width={400}
+                    height={200}
+                    alt=""
+                    className="certificate"
+                  />
+                </a>
+              </figure>
+            </div>            
 
           </div>
         </div>

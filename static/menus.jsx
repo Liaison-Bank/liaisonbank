@@ -20,19 +20,21 @@ const navLinks = [
 ]
 
 // Footer links
-const footerLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about-us-liaison" },
+const importantLinks = [
+  // { name: "Home", href: "/" },
+  // { name: "About", href: "/about-us-liaison" },
+  { name: "Article", href: "/terms-of-service" },
   { name: "CEO's Desk", href: "/ceo-desk" },
   { name: "Careers", href: "/careers-liaison-bank/" },
-  { name: "Client", href: "/client-liaison/" },
-  { name: "Process", href: "/process-liaison-bank" },
-  // { name: "Privacy Policy", href: "/privacy-policy" },
-  // { name: "Terms of Service", href: "/terms-of-service" },
+  // { name: "Client", href: "/client-liaison/" },
+  // { name: "Process", href: "/process-liaison-bank" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms of Service", href: "/terms-of-service" },
 ]
 
 const informationLinks = [
-  { name: "Testimonials", href: "/testimonials" },
+ 
   { name: "Contact Us", href: "/contact-us-liaison-bank" },
   { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Terms and Conditions", href: "/terms-conditions" }
@@ -40,4 +42,4 @@ const informationLinks = [
 
 
 // Named exports
-export { navLinks, footerLinks, informationLinks }
+export { navLinks, importantLinks, informationLinks }

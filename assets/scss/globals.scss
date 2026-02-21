@@ -763,7 +763,7 @@ header {
     padding: 0;
     background-color: var(--themeht-secondary-color);
     width: 100%;
-    background-image: url("../images//expertisebg.png");
+    background-image: url("../images/expertisebg.png");
     // background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -1040,6 +1040,7 @@ header {
     }
   }
 
+ 
   section.awardscertification{
     .section-title{
       // text-align:center;
@@ -1089,7 +1090,62 @@ header {
         }
       }
     }
-    
+     /* CERTIFICATES */
+.certificates {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 150px 0;
+  background: white;
+
+  b {
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+    opacity: 0.6;
+  }
+
+  h4 {
+    display: block;
+    font-size: 30px;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 15px;
+
+    span {
+      color: var(--theme-color);
+    }
+  }
+
+  small {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    opacity: 0.5;
+
+    &::after {
+      content: "";
+      width: 50px;
+      height: 1px;
+      background: #26282b;
+      display: inline-block;
+      margin-left: 5px;
+      margin-bottom: 4px;
+      opacity: 0.5;
+    }
+  }
+
+  figure {
+    display: block;
+    margin: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
   }
 
   
@@ -1199,22 +1255,22 @@ header {
 }
 
 footer {
-margin:0;
-padding: 0;
-font-family: var(--font-family);
-background:$footer-bg-color;
-border-top-left-radius: 5rem;
-border-top-right-radius: 5rem;
- h4{
+  margin:0;
+  padding: 0;
+  font-family: var(--font-family);
+  background:$footer-bg-color;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+h4{
   color:$primary-color;
   font-size: 1.4rem;
-      background: linear-gradient(115deg, var(--themeht-primary-color), var(--themeht-secondary-color));
-    background: linear-gradient(115deg, var(--themeht-primary-color), var(--themeht-secondary-color));
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
- }
- ul{
+  background: linear-gradient(115deg, var(--themeht-primary-color), var(--themeht-secondary-color));
+  background: linear-gradient(115deg, var(--themeht-primary-color), var(--themeht-secondary-color));
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+ul{
   li {
     padding-bottom:0.5rem;
     a{
@@ -1222,50 +1278,50 @@ border-top-right-radius: 5rem;
       text-decoration: none;
     }
   }
- }
- button img{
+}
+button img{
   border-radius:0.8rem;
- }
-  /* ------------------------
-    Scroll to Top
-  ------------------------ */
-  .scroll-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 600;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.8s ease-in-out;
-    transform: translate3d(0, 200%, 0);
+}
+.time {
+  margin-left: -0.3rem;
+}
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 600;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease-in-out;
+  transform: translate3d(0, 200%, 0);
 
-    &.scroll-visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translate3d(0, 0, 0);
-    }
-    
-    a {
+  &.scroll-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  a {
+    display: block;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 7px;
+    background: var(--themeht-white-color);
+    box-shadow: 5px 4px 50px 0 rgba(199, 215, 255, 0.45);
+    transition: all 0.3s ease-in-out;
+
+    &:visited {
       display: block;
-      height: 60px;
-      width: 60px;
-      line-height: 60px;
-      text-align: center;
-      border-radius: 7px;
-      background: var(--themeht-white-color);
-      box-shadow: 5px 4px 50px 0 rgba(199, 215, 255, 0.45);
-      transition: all 0.3s ease-in-out;
+    }
 
-      &:visited {
-        display: block;
-      }
-
-      img {
-        width: 80%;
-        border-radius: 10px;
-      }
+    img {
+      width: 80%;
+      border-radius: 10px;
     }
   }
+}
 }
 
 /* search-popup */
