@@ -1,46 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react"; import Image from "next/image";
 import Link from "next/link";
 import { footerLinks, informationLinks } from '../static/menus.jsx'
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import rocketImg from "@/assets/images/rocket.gif";
 
 export default function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(window.scrollY > 200);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <>
       <footer className="text-white px-2 py-2 font-sans text-md">
         <div className="max-w-7xl mx-auto px-4 py-10 flex flex-wrap justify-between gap-10">
-
           <div className="flex flex-col max-w-xs flex-1 min-w-[200px]">
             <h4 className="text-yellow-400 font-semibold mb-4 text-base">Office Address</h4>
             <p className="leading-relaxed">
               Plot No. 466, New Apollo CHS, 14th road, near Blue Tokai Coffee, Khar West, Mumbai- 400052
             </p>
-          </div>
-
-          <div className="flex flex-col max-w-xs flex-1 min-w-[200px]">
-            <h4 className="text-yellow-400 font-semibold mb-4 text-base">Contact Information</h4>
-            <p className="mb-3">
-              <strong className="block mb-1">Phone</strong>
-              (+91) 91364 43852/(+91) 9321709258
-            </p>
-            <p className="mb-3">
-              <strong className="block mb-1">Email</strong>
-              contact@liaisonbank.com
-            </p>
-            <p>Mon - Sat : 8:00am to 5pm</p>
           </div>
 
           <div className="flex flex-col max-w-xs flex-1 min-w-[200px]">
@@ -76,6 +49,22 @@ export default function Footer() {
               </li>
             ))} */}
             </ul>
+          </div>
+
+          <div className="flex flex-col max-w-xs flex-1 min-w-[200px]">
+            <h4 className="text-yellow-400 font-semibold mb-4 text-base">Quick Contacts</h4>
+            <p className="mb-3">
+
+            </p>
+            <p className="mb-3">
+              <strong className="block mb-1">Phone</strong>
+              (+91) 91364 43852/(+91) 9321709258
+            </p>
+            <p className="mb-3">
+              <strong className="block mb-1">Email</strong>
+              contact@liaisonbank.com
+            </p>
+            <p>Mon - Sat : 8:00am to 5pm</p>
           </div>
 
         </div>

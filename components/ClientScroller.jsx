@@ -16,9 +16,9 @@ const ClientScroller = () => {
                 {clientImageName.map((name, index) => (
                     <Slider.Slide key={index}>
                         <Image
-                            src={`/static/clients/${name}.jpg`}
-                            width={200}
-                            height={80}
+                            src={`/clients/${name}.jpg`}
+                            width={175}
+                            height={75}
                             alt={name}
                             loading="lazy"
                         />

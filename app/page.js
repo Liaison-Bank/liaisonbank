@@ -156,7 +156,7 @@ const Home = () => {
       </section>
 
       <section className="ourclients">
-        <div className="container mx-auto  py-4 bg-white">
+        <div className="container-fluid mx-auto px-0 py-4 bg-white">
           <div className="section-title">
             <h3>Our Latest Clients</h3>
           </div>
