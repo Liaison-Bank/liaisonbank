@@ -26,32 +26,22 @@ export default function TestimonialInfinite() {
     <div className="track">
       {[...testimonials, ...testimonials].map((item, index) => (
         <div className="card testimonial-card" key={index}>
-          
-          {/* Top Left Quote */}
           <div className={`quote-icon ${item.color}`}>
             ❝
           </div>
-
           <h4>{item.name}</h4>
           <small>{item.role}</small>
-
-          {/* Stars */}
           <div className="stars">★★★★★</div>
-
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-
-          {/* Bottom Right Watermark */}
           <span className="quote-watermark">❞</span>
-
         </div>
       ))}
     </div>
   </div>
 
-  {/* Clickable Dots */}
   <div className="dots">
     {testimonials.map((_, index) => (
       <span

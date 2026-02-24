@@ -1,6 +1,6 @@
 
 const categories = [
-  "Licensing",
+"Licensing",
 "License",
 "Regulatory Approval",
 "Statutory Compliance",

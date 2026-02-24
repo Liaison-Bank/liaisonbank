@@ -12,7 +12,9 @@ import ceoImg from "@/assets/images/deva-CEO.jpg"
 import rightTick from "@/assets/images/rightTick.svg"
 import ClientScroller from "@/components/ClientScroller"
 import useFancybox from '@/components/useFancybox';
+import ServiceList from '@/components/ServiceList';
 import TestimonialInfinite from '@/components/TestimonialInfinite';
+import CertificateScroller from '@/components/CertificateScroller';
 
 const Home = () => {
   useBodyClass('home');
@@ -25,7 +27,6 @@ const Home = () => {
     <>
       <div className="page-header">
         <div className="inner-header">
-
 
         </div>
         <Waves />
@@ -96,7 +97,6 @@ const Home = () => {
         </div>
       </section>
 
-
       <section className="ourexpertise">
         <div className="container mx-auto py-5">
           <div className="section-title">
@@ -123,51 +123,48 @@ const Home = () => {
               </div>
             </div>
             <div className="provision p-4">
-              <ul className='list-unstyled list-icon style-1'>
-                <li>
+              <div className="service-wrapper">
+                <ServiceList />
+              </div>
+              <ul className='list-unstyled list-icon style-1 d-none'>
+                <li data-content="Content for Asset Management">
                   <Image
                     src={rightTick}
                     alt=""
                     priority
                   /> Asset Management & Regularization</li>
-                <li>
+                <li data-content="Content for SME Compliance">
                   <Image
                     src={rightTick}
                     alt=""
                     priority
                   /> Compliance For SME&apos;s</li>
-                <li>
+                <li data-content="Content for Energy Savings">
                   <Image
                     src={rightTick}
                     alt=""
                     priority
                   /> Energy Savings</li>
-                <li>
+                <li data-content="Content for Licence Procurement">
                   <Image
                     src={rightTick}
                     alt=""
                     priority
                   /> Licence Procurement</li>
-                <li>
+                <li data-content="Content for Tailor Made Permissions">
                   <Image
                     src={rightTick}
                     alt=""
                     priority
                   /> Tailor Made Permissions</li>
               </ul>
-
+              <div className='p-4 d-none'>
+                  <div className='provision_content'>
+                      <p>We specialize in providing solutions for regulatory issues faced by residential buildings. 
+                        We navigate the complexities of compliances and ensure your property meets all necessary regulations.</p>
+                  </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ourclients">
-        <div className="container-fluid mx-auto px-0 py-5 bg-white">
-          <div className="section-title">
-            <h3>Our Latest Clients</h3>
-          </div>
-          <div>
-            <ClientScroller />
           </div>
         </div>
       </section>
@@ -178,90 +175,14 @@ const Home = () => {
             <h3>Awards & Certifications</h3>
           </div>
 
-          {/* Fancybox Container */}
-          <div
-            ref={fancyboxRef}
-            className="row"
-          >
-            <div className="col-lg-2 col-md-2 col-sm-6 col-6">
-              <figure>
-                <a
-                  href="/certificate/rajasthanrestaurant.webp"
-                  className="fancybox"
-                  data-fancybox="gallery"
-                  data-caption="Rajasthan Restaurant"
-                >
-                  <Image
-                    src="/certificate/rajasthanrestaurant.webp"
-                    width={400}
-                    height={200}
-                    alt=""
-                    className="certificate"
-                  />
-                </a>
-              </figure>
-            </div>
-
-            <div className="col-lg-2 col-md-2 col-sm-6 col-6">
-              <figure>
-                <a
-                  href="/certificate/masabha.webp"
-                  className="fancybox"
-                  data-fancybox="gallery"
-                  data-caption="Masabha"
-                >
-                  <Image
-                    src="/certificate/masabha.webp"
-                    width={400}
-                    height={200}
-                    alt=""
-                    className="certificate"
-                  />
-                </a>
-              </figure>
-            </div>
-
-            <div className="col-lg-2 col-md-2 col-sm-6 col-6">
-              <figure>
-                <a
-                  href="/certificate/L&T.webp"
-                  className="fancybox"
-                  data-fancybox="gallery"
-                  data-caption="Larsen & Tubro"
-                >
-                  <Image
-                    src="/certificate/L&T.webp"
-                    width={400}
-                    height={200}
-                    alt=""
-                    className="certificate"
-                  />
-                </a>
-              </figure>
-            </div>
-
-            <div className="col-lg-2 col-md-2 col-sm-6 col-6">
-              <figure>
-                <a
-                  href="/certificate/certificate1.webp"
-                  className="fancybox"
-                  data-fancybox="gallery"
-                  data-caption="Sunbeam Gorukrupa Developers"
-                >
-                  <Image
-                    src="/certificate/sunbeamn.webp"
-                    width={400}
-                    height={200}
-                    alt=""
-                    className="certificate"
-                  />
-                </a>
-              </figure>
-            </div>            
-
+          <div ref={fancyboxRef} className="row  py-5 d-flex align-items-center">
+            {/* <div className="col-lg-2 col-md-2 col-sm-6 col-6"> */}
+                <CertificateScroller />
+            {/* </div> */}
           </div>
         </div>
       </section>
+          
 
       <section className="clientfeedback">
         <div className="container-fluid mx-auto px-0 bg-white">
@@ -269,6 +190,17 @@ const Home = () => {
             <h3>Client Feedback <span>& Testimonial</span></h3>
           </div>
           <TestimonialInfinite />
+        </div>
+      </section>
+
+       <section className="ourclients">
+        <div className="container-fluid mx-auto px-0 py-5 bg-white">
+          <div className="section-title">
+            <h3>Our Latest Clients</h3>
+          </div>
+          <div>
+            <ClientScroller />
+          </div>
         </div>
       </section>
 

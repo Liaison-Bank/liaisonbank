@@ -1,7 +1,9 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { importantLinks, informationLinks } from '../static/menus.jsx'
+import { importantLinks } from '../static/menus.jsx'
+import NewLauncb from "@/components/NewLaunch";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function Footer() {
@@ -24,9 +26,6 @@ export default function Footer() {
                   <Link href={link.href}>{link.name}</Link>
                 </li>
               ))}
-              {/* <li>
-                <a href="/article" className="cursor-pointer hover:underline">Article</a>
-              </li> */}
             </ul>
           </div>
 
@@ -53,6 +52,10 @@ export default function Footer() {
         </div>
         <ScrollToTopButton />
       </footer>
+      <div className="marquee-branch d-flex align-items-center bg-white justify-content-between">
+        <div className="comingsoontitle pl-4 w-50"><p>Our new branch is opening soon</p> <div className="arrow arrow-right"></div></div>
+        <div className="location"><NewLauncb /></div>
+      </div>
     </>
   );
 }
