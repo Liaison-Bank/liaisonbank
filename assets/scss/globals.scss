@@ -901,12 +901,12 @@ $border-right-color_1: #ef7f1a;
 }
 @keyframes borderColor {
 	0% {
-		border-bottom-color: #60daaa;
-		border-left-color: #60daaa;
+		border-bottom-color: #ef7f1a;
+		border-left-color: #ef7f1a;
 	}
 	50% {
-		border-bottom-color: #60daaa;
-		border-left-color: #60daaa;
+		border-bottom-color: #ef7f1a;
+		border-left-color: #ef7f1a;
 	}
 	51% {
 		border-bottom-color: transparent;
@@ -2070,7 +2070,7 @@ header {
         opacity: 0.9;
         // padding-right:1rem;
       }
-      .draw {
+      .draw{
         overflow: hidden;
         position: relative;
         margin-right:1rem;
