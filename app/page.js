@@ -13,6 +13,7 @@ import ClientScroller from "@/components/ClientScroller"
 import useFancybox from '@/components/useFancybox';
 import TestimonialSlider  from '@/components/TestimonialSlider';
 import CertificateScroller from '@/components/CertificateScroller';
+import HomeSlider from "@/components/HomeSlider/HomeSlider";
 
 const Home = () => {
   useBodyClass('home');
@@ -23,9 +24,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="page-header">
+      <div className="hero-section page-header">
         <div className="inner-header">
-
+          {/* <HomeSlider/> */}
         </div>
         <Waves />
         {/* <div className="smallObject">

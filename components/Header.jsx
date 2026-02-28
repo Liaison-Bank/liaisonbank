@@ -19,7 +19,12 @@ export default function Header() {
 
   const openNav = () => setIsOpen(true);
   const closeNav = () => setIsOpen(false);
+  const [openMenu, setOpenMenu] = useState(null);
 
+  const handleToggle = (name) => {
+    setOpenMenu(openMenu === name ? null : name);
+  };
+  
   // Sticky header on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +60,7 @@ export default function Header() {
             </Link>
 
             {/* ================= DESKTOP MENU ================= */}
-            <div className="hidden lg:flex">
+            <div className="hidden xl:flex">
               <ul className="flex space-x-8">
                 {navLinks.map((link) => (
                   <li key={link.name}>
@@ -88,22 +93,22 @@ export default function Header() {
                     )}
                   </li>
                 ))}
-                <li>
+                {/* <li>
                 <button className="action-btn-search text-white" onClick={openPopup}><i className="fa fa-search"></i> Search</button>
-                </li>
+                </li> */}
               </ul>
             </div>
 
             {/* ================= MOBILE HAMBURGER ================= */}
             <button
-              className="lg:hidden text-white"
+              className="xl:hidden text-white"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? "X" : <MenuIcon size={28} color="#fff" />}
             </button>
 
             <button
-              className={`hamburger lg:hidden ${isOpen ? "active" : ""}`}
+              className={`hamburger xl:hidden ${isOpen ? "active" : ""}`}
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle Menu"
             >

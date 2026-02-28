@@ -5,9 +5,11 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about-us-liaison" },
   { name: "Our Clients", href: "/client-liaison" },
+  { name: "Completed", href: "/completed-liaison-bank" },
+  { name: "On Going", href: "/ongoing-liaison-bank" },
   { 
-    name: "Our Expertise", 
-    href: "/our-expertise", 
+    name: "Our Services", 
+    href: "#", 
     submenu: [
       { name: "Residential", href: "/residential" },
       { name: "For Garment Manufacturing Units", href: "/forgarment-manufacturing-units" },
@@ -17,6 +19,7 @@ const navLinks = [
   },
   { name: "Process", href: "/process-liaison-bank" },
   { name: "Contact Us", href: "/contact-us-liaison-bank" },
+  // { name: "Login", href: "/Login" },
 ]
 
 // Footer links
