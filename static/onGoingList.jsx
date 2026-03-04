@@ -1,88 +1,96 @@
 const onGoingList = [
     {
-      clientName: "Amar Fruit Juice Centre",
-      location: "Vile Parle(W)",
+        clientName: "Amar Fruit Juice Centre",
+        location: "Vile Parle(W)",
     },
     {
-      clientName: "Amber Restaurant",
-      location: "Bandra(W)",
+        clientName: "Amber Restaurant",
+        location: "Bandra(W)",
     },
     {
-      clientName: "Anubhav Restaurants",
-      location: "Fort",
+        clientName: "Anubhav Restaurants",
+        location: "Fort",
+    }, {
+        clientName: "Saifee Hospital",
+        location: "Charni Road"
     },
     {
-      clientName: "Amar Fruit Juice Centre",
-      location: "Vile Parle(W)",
+        clientName: "Amar Fruit Juice Centre",
+        location: "Vile Parle (W)"
     },
     {
-      clientName: "Amber Restaurant",
-      location: "Bandra(W)",
+        clientName: "Amber Restaurant",
+        location: "Bandra (W)"
     },
     {
-      clientName: "Anubhav Restaurants",
-      location: "Fort",
+        clientName: "Urban Tadka",
+        location: "Malad (W)"
     },
     {
-      clientName: "Amar Fruit Juice Centre",
-      location: "Vile Parle(W)",
+        clientName: "Hotel Silver Inn",
+        location: "Andheri (E)"
     },
     {
-      clientName: "Amber Restaurant",
-      location: "Bandra(W)",
+        clientName: "Shree Ambe",
+        location: "Andheri (E)"
     },
     {
-      clientName: "Anubhav Restaurants",
-      location: "Fort",
+        clientName: "Omkar Altamount",
+        location: "Malad"
     },
     {
-      clientName: "Amar Fruit Juice Centre",
-      location: "Vile Parle(W)",
+        clientName: "Sunbeam Gurukurpa Developer",
+        location: "Vile Parle (E)"
     },
     {
-      clientName: "Amber Restaurant",
-      location: "Bandra(W)",
+        clientName: "Raheja Legend Condominium",
+        location: "Worli"
     },
     {
-      clientName: "Anubhav Restaurants",
-      location: "Fort",
+        clientName: "Lodha Crown",
+        location: "Thane"
     },
     {
-      clientName: "Amar Fruit Juice Centre",
-      location: "Vile Parle(W)",
+        clientName: "Sugan Heights",
+        location: "Grant Road"
     },
     {
-      clientName: "Amber Restaurant",
-      location: "Bandra(W)",
+        clientName: "Palai Tower",
+        location: "Goregaon"
     },
     {
-      clientName: "Anubhav Restaurants",
-      location: "Fort",
+        clientName: "Grand Pallazo",
+        location: "Dadar"
     },
     {
-      clientName: "Amar Fruit Juice Centre",
-      location: "Vile Parle(W)",
+        clientName: "VCA Square",
+        location: "Dadar"
     },
     {
-      clientName: "Amber Restaurant",
-      location: "Bandra(W)",
+        clientName: "Kalpataru Magnus",
+        location: "Bandra East"
     },
     {
-      clientName: "Anubhav Restaurants",
-      location: "Fort",
+        clientName: "Lodha Bellavue",
+        location: "Byculla"
     },
     {
-      clientName: "Amar Fruit Juice Centre",
-      location: "Vile Parle(W)",
+        clientName: "Saat Rasta Properties Pvt. Ltd.",
+        location: "Byculla"
     },
     {
-      clientName: "Amber Restaurant",
-      location: "Bandra(W)",
+        clientName: "Gundavali Co-operative Housing Society Ltd.",
+        location: "Andheri"
     },
     {
-      clientName: "Anubhav Restaurants",
-      location: "Fort",
-    }    
+        clientName: "Our Select State Bank of India Supervising Co-op HSG Society",
+        location: "Bandra"
+    },
+    {
+        clientName: "Sea Kunal Corporation Pvt. Ltd.",
+        location: "Colaba"
+    },
+
 ];
 
 export { onGoingList };

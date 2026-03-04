@@ -16,7 +16,7 @@ export default function OngoingLiaisonbankPage() {
       arr.slice(i * size, i * size + size)
     );
   };
-  const chunks = chunkArray(onGoingList, 3);
+  const chunks = chunkArray(onGoingList, 4);
   return (
     <>
       <div className="page-header">
