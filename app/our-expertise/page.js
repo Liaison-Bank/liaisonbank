@@ -3,6 +3,8 @@
 import Link from "next/link";
 import useBodyClass from '@/components/useBodyClass'; // Adjust path as needed
 import PageTitleWave from '@/components/PageTitleWave';
+import PageTitleWaveLeft from '@/components/PageTitleWaveLeft';
+
 
 export default function OurExpertise() {
   useBodyClass('expertise');
@@ -41,6 +43,7 @@ export default function OurExpertise() {
               </div>
             </div>
           </div>
+          <PageTitleWaveLeft />          
         </div>
       </div>
       <section className="container py-5">

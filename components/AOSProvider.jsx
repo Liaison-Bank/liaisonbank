@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation'; // Import this
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const AOSProvider = ({ children }) => {
+  const pathname = usePathname(); // Get current URL path
   useEffect(() => {
     // 1. Force the browser to start at the top on refresh
     if ('scrollRestoration' in history) {
@@ -21,10 +23,11 @@ const AOSProvider = ({ children }) => {
         offset: 50,       // Start animation slightly later
         delay: 0,
       });
-    }, 200); // 200ms delay is usually enough for Next.js hydration
+    }, [pathname]); // Dependency array: triggers on path change
+    // }, 200); // 200ms delay is usually enough for Next.js hydration
 
     return () => clearTimeout(timer);
-  }, []);
+  },);
 
   return <>{children}</>;
 };

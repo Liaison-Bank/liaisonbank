@@ -3,6 +3,8 @@
 import Link from "next/link";
 import useBodyClass from '@/components/useBodyClass'; // Adjust path as needed
 import PageTitleWave from '@/components/PageTitleWave';
+import PageTitleWaveLeft from '@/components/PageTitleWaveLeft';
+
 
 // const AboutUsLiaisonPage = () => {
   export default function SitemapLiaisonPage() {
@@ -42,6 +44,7 @@ import PageTitleWave from '@/components/PageTitleWave';
               </div>
             </div>
           </div>
+          <PageTitleWaveLeft />
         </div>
       </div>
       <section className="container py-5">

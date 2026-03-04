@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "@flaticon/flaticon-uicons/css/all/all.css";
 import "@fontsource/josefin-sans";
 import "@/assets/scss/globals.scss";
+import ReduxProvider from '@/components/ReduxProvider'; // Adjust path as needed
 // import ParticlesBackground from "@/components/ParticlesBackground";
 
 export const metadata = {
@@ -19,16 +20,18 @@ export default function RootLayout({ children }) {
       <head>
       </head>
       <body className="flex flex-col min-h-screen bg-gray-50">
-        <Cursor />
-        {/* <ParticlesBackground /> */}
-        <AOSProvider>
-          <Header />
-          <main className="flex-grow">
+        <ReduxProvider>
+          <Cursor />
+          {/* <ParticlesBackground /> */}
+          <AOSProvider>
+            <Header />
+            <main className="flex-grow">
 
-            {children}
-          </main>
-        </AOSProvider>
-        <Footer />
+              {children}
+            </main>
+          </AOSProvider>
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

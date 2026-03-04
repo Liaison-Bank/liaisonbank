@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
 
-export default function PageTitleWave() {
+export default function PageTitleWaveLeft() {
   return (
-    <div className="page-title-wave">
+    <div className="page-title-wave left-side">
       <svg
         viewBox="0 0 1440 390"
         xmlns="http://www.w3.org/2000/svg"

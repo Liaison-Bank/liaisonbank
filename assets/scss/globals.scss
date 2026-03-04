@@ -540,6 +540,10 @@ canvas {
   left: 0;
   width: 100%;
   z-index: -1;
+  &.left-side{
+    transform: rotate(180deg);
+    top: -4rem;
+  }
 }
 ul {
   margin: 0;
@@ -2065,6 +2069,68 @@ header {
 }
 .ongoing{
   $transition-speed: 0.2s;
+  .project-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+	.grid-item {
+		background: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			li {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 8px 0;
+				border-bottom: 1px solid #eee;
+				&::before {
+					content: "•";
+					margin-right: 10px;
+					color: #333;
+				}
+			}
+		}
+	}
+}
+.item-name {
+	flex: 1;
+	margin-left: 5px;
+}
+
+  .project-grid1{
+    display: grid;
+    /* This creates 4 columns on desktop, but adjusts automatically */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Column Styling */
+    .grid-item {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-align: center;
+        ul {
+          list-style-type: disc;       /* bullet style */
+          list-style-position: inside; /* keeps bullet inside */
+          padding-left: 0;             /* optional: remove extra spacing */
+          li {
+            display: flex;
+            justify-content: space-between;
+            list-style-position: inside;
+          }
+        }
+    }
+  }
+
   table{
     @media (max-width: 1024px){
         width: 100% !important;
@@ -2205,6 +2271,69 @@ header {
   }
   
 }
+
+.process{
+  $transition-speed: 0.2s;
+  .section-title {
+      // text-align:center;
+      margin: 0;
+      padding: 1rem 0;
+      background-color: white;
+      text-align: center;
+      h3 {
+        text-align: center;
+        line-height: 1;
+        padding-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        background: linear-gradient(
+          115deg,
+          var(--themeht-primary-color),
+          var(--themeht-secondary-color)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: 9;
+
+        /* ORANGE UNDERLINE (CENTERED) */
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 90px;
+          height: 3px;
+          background: #ff7a00;
+          border-radius: 4px;
+          transform: translateX(-45%);
+          overflow: hidden;
+        }
+
+        /* SINGLE MOVING DOT (CENTERED FLOW) */
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -6px;
+          left: 50%;
+          width: 14px;
+          height: 14px;
+          background: #ffffff;
+          border: 3px solid #ff7a00;
+          border-radius: 50%;
+          transform: translateX(-45px); // half of underline width
+          animation: dot-flow 3s linear infinite alternate;
+          z-index: 2;
+        }
+      }
+    }
+}
+
+
+
 
 footer {
   margin: 0;

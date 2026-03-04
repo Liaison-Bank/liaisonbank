@@ -2,54 +2,43 @@
 
 // Header navigation links
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about-us-liaison" },
-  { name: "Our Clients", href: "/client-liaison" },
-  { name: "Completed", href: "/completed-liaison-bank" },
-  { name: "On Going", href: "/ongoing-liaison-bank" },
+  { name: "Home", href: "/", title: "" },
+  { name: "About", href: "/about-us-liaison", title: "About Liaisonbank", alt: "" },
+  { name: "Our Clients", href: "/client-liaison", title: "Our Clients Liaisonbank", alt: ""  },
+  { name: "Completed", href: "/completed-liaison-bank", title: "Completed Liaisonbank", alt: ""  },
+  { name: "On Going", href: "/ongoing-liaison-bank", title: "On Going Liaisonbank", alt: ""  },
   { 
     name: "Our Services", 
+    title: "Liaisonbank Services",
+    alt: "",
     submenu: [
-      { name: "AMC", href: "" },
-      { name: "Pest Control", href: "" },
-      { name: "Licensing", href: "" },
-      { name: "Liaisoning", href: "" },
-      { name: "Equipment Solution Department ( ESD )", href: "" },
-      { name: "Electrical Execution, Compliance & Maintenance Services ( EECM )", href: "" },
-      { name: "Fire & Safety Systems and Compliance Solutions ( FSSCS )", href: "" },
-      { name: "Integrated Licensing & Compliance Solutions ( ILCS )", href: "" },
-      { name: "Integrated Liaisoning, Approvals & Compliance Solutions ( ILACS )", href: "" },
-      { name: "Piped Natural Gas (Png) Services & Regulatory Compliance ( PNGRC )", href: "" },
-
+      { name: "AMC", href: "", title: "AMC", alt: "AMC Liaisonbank" },
+      // { name: "Pest Control", href: "" },
+      { name: "Licensing", href: "", title: "Licensing", alt: "Licensing" },
+      { name: "Liaisoning", href: "", title: "Liaisoning", alt: "Liaisoning" },
+      { name: "Electrical ( SITC )", href: "", title: "Electrical Execution, Compliance & Maintenance Services", alt: "Electrical ( SITC )" },
+      { name: "Fire ( SITC )", href: "", title: "Fire & Safety Systems and Compliance Solutions", alt: "Fire ( SITC )" },
+      { name: "PNG ( SITC )", href: "", title: "Piped Natural Gas (Png) Services & Regulatory Compliance", alt: "PNG ( SITC )" },
+      { name: "Equipment Solution Department ( ESD )", href: "", title: "Equipment Solution Department", alt: "( ESD )" },
+      { name: "Integrated Licensing & Compliance Solutions ( ILCS )", href: "", title: "Integrated Licensing & Compliance Solutions", alt: "( ILCS )" },
+      { name: "Integrated Liaisoning, Approvals & Compliance Solutions ( ILACS )", href: "", title: "Integrated Liaisoning, Approvals & Compliance Solutions", alt: "( ILACS )" },
     ]
   },  
-  { name: "Process", href: "/process-liaison-bank" },
-  { name: "Contact Us", href: "/contact-us-liaison-bank" },
+  { name: "Process", href: "/process-liaison-bank", title: "Process Liaisonbank", alt: "Process Liaisonbank"  },
+  { name: "Contact Us", href: "/contact-us-liaison-bank", title: "Contact Liaisonbank", alt: "Contact Liaisonbank"  },
   // { name: "Login", href: "/Login" },
 ]
 
 // Footer links
 const importantLinks = [
-  // { name: "Home", href: "/" },
-  // { name: "About", href: "/about-us-liaison" },
-  { name: "Article", href: "/article-liaison-bank" },
-  { name: "CEO's Desk", href: "/ceos-desk" },
-  { name: "Careers", href: "/careers-liaison-bank/" },
-  // { name: "Client", href: "/client-liaison/" },
-  // { name: "Process", href: "/process-liaison-bank" },
-  { name: "Testimonials", href: "/testimonials-liaison-bank" },
-  { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "Terms of Service", href: "/terms-and-conditions" },
-  { name: "Sitemap", href: "/sitemap" }
+  { name: "Article", href: "/article-liaison-bank", title: "Article Liaisonbank", alt: "Article Liaisonbank" },
+  { name: "CEO's Desk", href: "/ceos-desk", title: "CEO's Desk Liaisonbank", alt: "CEO's Desk Liaisonbank" },
+  { name: "Careers", href: "/careers-liaison-bank/", title: "Careers Liaisonbank", alt: "Careers Liaisonbank" },
+  { name: "Testimonials", href: "/testimonials-liaison-bank", title: "Testimonials Liaisonbank", alt: "Testimonials Liaisonbank" },
+  { name: "Privacy Policy", href: "/privacy-policy", title: "Privacy Policy Liaisonbank", alt: "Privacy Policy Liaisonbank" },
+  { name: "Terms of Service", href: "/terms-and-conditions", title: "Terms of Services Liaisonbank", alt: "Terms of Services Liaisonbank" },
+  { name: "Sitemap", href: "/sitemap", title: "Sitemap Liaisonbank", alt: "Sitemap Liaisonbank" }
 ]
-
-const informationLinks = [
- 
-  { name: "Contact Us", href: "/contact-us-liaison-bank" },
-  { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "Terms and Conditions", href: "/terms-conditions" },
-]
-
 
 // Named exports
-export { navLinks, importantLinks, informationLinks }
+export { navLinks, importantLinks }

@@ -1,5 +1,6 @@
 "use client"
 
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -7,12 +8,13 @@ import logoScrolled from "@/assets/images/logo.png"
 import { navLinks } from '@/static/menus'
 
 export default function Header() {
+
   const [isSticky, setIsSticky] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isActive, setIsActive] = useState(false);
-
+  const pathname = usePathname();
   const openPopup = () => setIsActive(true);
   const closePopup = () => setIsActive(false);
 
@@ -38,15 +40,16 @@ export default function Header() {
     <>
       <header className={`fixed w-full z-50 transition-all ${isSticky ? "sticky" : ""}`}>
         <div className="max-w-7xl mx-auto">
-          <nav className="flex items-center justify-between h-16">
+          <nav key={pathname} className="flex items-center justify-between h-16">
             
             {/* LOGO: Left to Right Animation */}
             <div data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="html">
               <Link href="/" onClick={() => setIsOpen(false)}>
                 <Image
                   src={logoScrolled}
-                  alt="Company Logo"
                   width={150}
+                  title="Liaisonbank"
+                  alt="Liaisonbank"
                   priority
                 />
               </Link>

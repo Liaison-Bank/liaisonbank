@@ -3,6 +3,9 @@
 import Link from "next/link";
 import useBodyClass from '@/components/useBodyClass'; // Adjust path as needed
 import PageTitleWave from '@/components/PageTitleWave';
+import PageTitleWaveLeft from '@/components/PageTitleWaveLeft';
+import AnimatedCounter from '@/components/AnimateCounter';
+
 
 export default function CompletedLiaisonbankPage() {
   useBodyClass('completed');
@@ -16,10 +19,10 @@ export default function CompletedLiaisonbankPage() {
               <div className="row justify-content-center text-center">
                 <div className="col-lg-10">
                   <div className="theme-breadcrumb-box">
-                    <h1>Completed</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Completed</h1>
 
                     <nav aria-label="breadcrumb" className="page-breadcrumb">
-                      <ol className="breadcrumb justify-content-center">
+                      <ol className="breadcrumb justify-content-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                         <li className="breadcrumb-item">
                           <Link href="/">
                             <i className="bi bi-house-door me-1" aria-hidden="true"></i>
@@ -41,12 +44,18 @@ export default function CompletedLiaisonbankPage() {
               </div>
             </div>
           </div>
+          <PageTitleWaveLeft />
         </div>
       </div>
       <section className="container py-5">
         <div className="row justify-content-center text-center">
           <div className="col-12">
-            <div className="table-container">
+
+            <h2>Our Completed Almost 
+              <p><AnimatedCounter endValue={125} />+ Projects</p>
+            </h2>
+
+            <div className="table-container d-none">
               <table className="project-table border table-bordered w-75 mx-auto completed">
                 <thead>
                   <tr>
@@ -184,6 +193,7 @@ export default function CompletedLiaisonbankPage() {
                 </tbody>
               </table>
             </div>
+
           </div>
         </div>
       </section>
