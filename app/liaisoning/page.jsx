@@ -6,8 +6,9 @@ import PageTitleWave from '@/components/PageTitleWave';
 import PageTitleWaveLeft from '@/components/PageTitleWaveLeft';
 
 
-export default function OurExpertise() {
-  useBodyClass('expertise');
+// const AboutUsLiaisonPage = () => {
+  export default function LiaisoningPage() {
+  useBodyClass('liaisoning');
   return (
     <>
       <div className="page-header">
@@ -18,10 +19,10 @@ export default function OurExpertise() {
               <div className="row justify-content-center text-center">
                 <div className="col-lg-10">
                   <div className="theme-breadcrumb-box">
-                    <h1>Our Expertise</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Liaisoning</h1>
 
                     <nav aria-label="breadcrumb" className="page-breadcrumb">
-                      <ol className="breadcrumb justify-content-center">
+                      <ol className="breadcrumb justify-content-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                         <li className="breadcrumb-item">
                           <Link href="/">
                             <i className="bi bi-house-door me-1" aria-hidden="true"></i>
@@ -33,7 +34,7 @@ export default function OurExpertise() {
                           className="breadcrumb-item active"
                           aria-current="page"
                         >
-                          Our Expertise
+                          Liaisoning
                         </li>
                       </ol>
                     </nav>
@@ -43,14 +44,16 @@ export default function OurExpertise() {
               </div>
             </div>
           </div>
-          <PageTitleWaveLeft />          
+          <PageTitleWaveLeft />
         </div>
       </div>
       <section className="container py-5">
         <div className="row justify-content-center text-center">
-          
+         
         </div>
       </section>
     </>
   );
 }
+
+// export default AboutUsLiaisonPage;

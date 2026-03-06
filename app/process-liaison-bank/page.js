@@ -48,7 +48,7 @@ export default function ProcessLiaisonbankPage() {
       </div>
       <section className="container py-5">
         <div className="row justify-content-center text-center">
-          <div className="section-title">
+          <div className="section-title" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
             <h3>Comprehensive Licensing Solutions</h3>
             <h5>From evaluation to handover, we’re here every step of the way.</h5>
             <h6>Trust us to navigate the intricacies of your project, ensuring a seamless and successful journey from start to finish</h6>
@@ -58,7 +58,7 @@ export default function ProcessLiaisonbankPage() {
 
       <section className="container py-5">
         <div className="row justify-content-center text-center">
-          <div className="section-title">
+          <div className="section-title" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
             <h3>What we Do</h3>
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function ProcessLiaisonbankPage() {
 
       <section className="container py-5">
         <div className="row justify-content-center text-center">
-          <div className="section-title">
+          <div className="section-title" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
             <h3>Our Brands</h3>
           </div>
         </div>

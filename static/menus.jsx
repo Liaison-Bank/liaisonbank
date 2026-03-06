@@ -12,10 +12,10 @@ const navLinks = [
     title: "Liaisonbank Services",
     alt: "",
     submenu: [
-      { name: "AMC", href: "", title: "AMC", alt: "AMC Liaisonbank" },
+      { name: "AMC", href: "/amc", title: "AMC", alt: "AMC Liaisonbank" },
       // { name: "Pest Control", href: "" },
-      { name: "Licensing", href: "", title: "Licensing", alt: "Licensing" },
-      { name: "Liaisoning", href: "", title: "Liaisoning", alt: "Liaisoning" },
+      { name: "Licensing", href: "/licensing", title: "Licensing", alt: "Licensing" },
+      { name: "Liaisoning", href: "/liaisoning", title: "Liaisoning", alt: "Liaisoning" },
       { name: "Electrical ( SITC )", href: "", title: "Electrical Execution, Compliance & Maintenance Services", alt: "Electrical ( SITC )" },
       { name: "Fire ( SITC )", href: "", title: "Fire & Safety Systems and Compliance Solutions", alt: "Fire ( SITC )" },
       { name: "PNG ( SITC )", href: "", title: "Piped Natural Gas (Png) Services & Regulatory Compliance", alt: "PNG ( SITC )" },

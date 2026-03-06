@@ -108,7 +108,7 @@ export default function Footer() {
 
             <p className="mb-3"  data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
               Plot No. 466, New Apollo CHS, 14th Road, near Blue Tokai Coffee,
-              Khar West, Mumbai – 400052
+              Khar West,<br/> Mumbai – 400052
             </p>
 
             <div className="mb-3 flex items-center gap-2"  data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
