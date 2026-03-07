@@ -1,6 +1,8 @@
 @use "tailwindcss";
 
 $primary-color: #ef7f1a;
+$base-color:#919191;
+$text-color:#7c7c7b;
 $bg-secodary-theme-color: #000229;
 $footer-bg-color: #000229;
 // $font-family:"Josefin Sans", sans-serif;
@@ -957,6 +959,8 @@ header {
   padding: 0.2rem 1rem 0;
   background: transparent;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
   &:before {
     content: "";
     position: absolute;
@@ -1030,19 +1034,30 @@ header {
         margin: 0;
         padding: 2rem 1rem;
         position:relative;
-        color: white;
+        color: #7c7c7b;
+        // &:hover{
+        //   content: "";
+        //   position: absolute;
+        //   bottom: 0;
+        //   height: 3px;
+        //   width: 100%;
+        //   border-bottom:1px solid $primary-color;
+        //   left: 0;
+        // }
         a {
           outline: none;
           font-size: var(--font-size);
-          color: rgb(255, 255, 255);
+          color: #7c7c7b;
           text-decoration: none;
+          font-weight:600;
         }
         button{
-          color:white;
+          color:#7c7c7b;
           font-size: var(--font-size);
         }
         &.has-submenu {
           position: relative;
+           font-weight:600;
           &:hover {
             .mega-menu {
               opacity: 1;
@@ -1053,7 +1068,8 @@ header {
         .mega-menu {
           opacity: 0;
           visibility: hidden;
-          background: linear-gradient(0deg, #be2a2a -86.4%, #ef7f1a 94.15%);
+          // background: linear-gradient(0deg, #be2a2a -86.4%, #ef7f1a 94.15%);
+          background:white;
           width: 100vw;
           margin: 0 auto;
           transition: all .3s;
@@ -1080,12 +1096,14 @@ header {
           }
         }
         .mega-menu-grid {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-          display: grid;
+          // grid-template-columns: repeat(3, 1fr);
+          // gap: 20px;
+          // display: grid;
+          display: flex;
+          flex-direction: column;
+          width: 40%;
         }
         .mega-menu-item {
-          border-right: 1px solid rgba(255,255,255,0.2);
           padding-right: 20px;
           h4 {
             font-size: 1rem;
@@ -1097,21 +1115,40 @@ header {
             margin-bottom: 15px;
           }
           a {
-            color: white;
+            color: $text-color;
             text-decoration: none;
             display: block;
           }
-        }
+            &.has-children {
+              position:relative;
+              ul.mega-submenu {
+                opacity: 0;
+                visibility: hidden;
+                left:4rem;
+                margin: 0 auto;
+                top:0;
+                transition: all .3s;
+                position: absolute;
+                background-color:$primary-color;
+                box-shadow: 5px 5px 5px 0.5;
+                border-radius:4px;
+                li {  
+                  margin:0;
+                  padding:0.5rem;
+                  a{ color:$text-color;}
+                }
+              }
+              &:hover{
+                ul.mega-submenu {
+                    opacity: 1;
+                    visibility: visible;
+                  }
+              }
+            }
+          }
         .mega-link {
           font-size: 14px;
           border-bottom: 1px solid #fff;
-        }
-
-        &.has-submenu:hover {
-          ul{
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
         }
       }
     }

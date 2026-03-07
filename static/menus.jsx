@@ -12,16 +12,27 @@ const navLinks = [
     title: "Liaisonbank Services",
     alt: "",
     submenu: [
-      { name: "AMC", href: "/amc", title: "AMC", alt: "AMC Liaisonbank" },
-      // { name: "Pest Control", href: "" },
+      { name: "AMC", href: "/amc", title: "AMC", alt: "AMC Liaisonbank",
+        submenu2: [
+          // { name: "Pest Control", href: "", title: "", alt: "" },
+          { name:"Licenses Renewal", href:"", title: "", alt: ""  },
+          { name:"PNG Audit and Certification", href:"", title: "", alt: ""  },
+          { name:"Fire Audit and Certification", href:"", title: "", alt: ""  },
+          { name:"Electric Audit and Certification", href:"", title: "", alt: ""  },
+          { name:"Pest Control Service and Certification", href:"", title: "", alt: ""  },
+          { name:"Water Tank Cleaning and Certification (Ongoing)", href:"", title: "", alt: ""  },
+        ]
+      },
       { name: "Licensing", href: "/licensing", title: "Licensing", alt: "Licensing" },
       { name: "Liaisoning", href: "/liaisoning", title: "Liaisoning", alt: "Liaisoning" },
       { name: "Electrical ( SITC )", href: "", title: "Electrical Execution, Compliance & Maintenance Services", alt: "Electrical ( SITC )" },
       { name: "Fire ( SITC )", href: "", title: "Fire & Safety Systems and Compliance Solutions", alt: "Fire ( SITC )" },
       { name: "PNG ( SITC )", href: "", title: "Piped Natural Gas (Png) Services & Regulatory Compliance", alt: "PNG ( SITC )" },
       { name: "Equipment Solution Department ( ESD )", href: "", title: "Equipment Solution Department", alt: "( ESD )" },
-      { name: "Integrated Licensing & Compliance Solutions ( ILCS )", href: "", title: "Integrated Licensing & Compliance Solutions", alt: "( ILCS )" },
-      { name: "Integrated Liaisoning, Approvals & Compliance Solutions ( ILACS )", href: "", title: "Integrated Liaisoning, Approvals & Compliance Solutions", alt: "( ILACS )" },
+      { name: "Group Profile", href: "", title: "Group Profile", alt: "( ESD )" },
+
+      // { name: "Integrated Licensing & Compliance Solutions ( ILCS )", href: "", title: "Integrated Licensing & Compliance Solutions", alt: "( ILCS )" },
+      // { name: "Integrated Liaisoning, Approvals & Compliance Solutions ( ILACS )", href: "", title: "Integrated Liaisoning, Approvals & Compliance Solutions", alt: "( ILACS )" },
     ]
   },  
   { name: "Process", href: "/process-liaison-bank", title: "Process Liaisonbank", alt: "Process Liaisonbank"  },
