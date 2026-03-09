@@ -4,44 +4,25 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import logoScrolled from "@/assets/images/logo_grey2.png"
+import logoScrolled from "@/assets/images/logo_grey.png"
 import { navLinks } from '@/static/menus'
 
 export default function Header() {
-
+  const pathname = usePathname();
   const [isSticky, setIsSticky] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [openSubmenu, setOpenSubmenu] = useState(null); // Mobile SUbmenu
   const [isScrolled, setIsScrolled] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const pathname = usePathname();
   const openPopup = () => setIsActive(true);
   const closePopup = () => setIsActive(false);
-
-  const openNav = () => setIsOpen(true);
-  const closeNav = () => setIsOpen(false);
-  const [openMenu, setOpenMenu] = useState(null);
-
-  const handleToggle = (name) => {
-    setOpenMenu(openMenu === name ? null : name);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY > 50;
-      setIsSticky(scrollPos);
-      setIsScrolled(scrollPos);
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   return (
     <>
       <header className={`fixed w-full z-50 py-2 transition-all ${isSticky ? "" : ""}`}>
         <div className="max-w-7xl mx-auto">
           <nav key={pathname} className="flex items-center justify-between h-16">
-
+            
             {/* LOGO: Left to Right Animation */}
             <div data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="html">
               <Link href="/" onClick={() => setIsOpen(false)}>
@@ -57,77 +38,48 @@ export default function Header() {
 
             <div className="hidden xl:flex">
               <ul className="flex space-x-8">
-  {navLinks.map((link, index) => {
-    const hasSubmenu = !!link.submenu?.length;
+                {navLinks.map((link, index) => {
+                  const hasSubmenu = link.submenu && link.submenu.length > 0;
+                  return (
+                    /* MENU LINKS: Top to Bottom Animation with Staggered Delay */
+                    <li 
+                      key={link.name} 
+                      className={`${hasSubmenu ? "has-submenu" : ""}`}
+                      data-aos="fade-down"
+                      data-aos-delay={index * 100} // Increments delay for each item
+                      data-aos-duration="800"
+                    >
+                      {link.href ? (
+                        <Link href={link.href}>
+                          {link.name}
+                        </Link>
+                      ) : (
+                        <span className="cursor-pointer">
+                          {link.name}
+                        </span>
+                      )}
 
-    return (
-      <li
-        key={link.name}
-        className={hasSubmenu ? "has-submenu relative" : ""}
-        data-aos="fade-down"
-        data-aos-delay={index * 100}
-        data-aos-duration="800"
-      >
-        {link.href ? (
-          <Link href={link.href}>{link.name}</Link>
-        ) : (
-          <span className="cursor-pointer">{link.name}</span>
-        )}
-
-        {hasSubmenu && (
-          <div className="mega-menu">
-            <div className="mega-menu-inner">
-
-              {/* 2 Column Layout */}
-              <div className="grid grid-cols-2 gap-16">
-
-                {/* LEFT SIDE SERVICES */}
-                <div className="border-r border-white/30 pr-12">
-                  {link.submenu.map((sub) => (
-                    <div key={sub.name} className="mega-menu-item mb-3">
-                      <Link href={sub.href || "#"}>
-                        <h4 className="hover:text-yellow-200 transition">
-                          {sub.name}
-                        </h4>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-
-                {/* RIGHT SIDE (submenu2 items like Pest Control) */}
-                <div className="flex flex-col gap-4">
-
-                  {link.submenu.map((sub) =>
-                    sub.submenu2?.map(
-                      (sub2) =>
-                        sub2.name && (
-                          <div
-                            key={sub2.name}
-                            className="bg-orange-500 px-6 py-3 rounded shadow-lg w-fit"
-                          >
-                            <Link href={sub2.href || "#"}>
-                              <span className="font-semibold text-lg">
-                                {sub2.name}
-                              </span>
-                            </Link>
+                        {link.submenu && (
+                          <div className="mega-menu">
+                            <div className="mega-menu-inner">
+                              <div className="mega-menu-grid">
+                                {link.submenu.map((sub) => (
+                                  <div key={sub.name} className="mega-menu-item">
+                                    <Link href={sub.href}>
+                                      <h4>{sub.name}</h4>
+                                    </Link>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
                           </div>
-                        )
-                    )
-                  )}
-
-                </div>
-
-              </div>
-
+                        )}
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
-          </div>
-        )}
-      </li>
-    );
-  })}
-</ul>
-            </div>
-
+            
             <button
               className={`hamburger xl:hidden ${isOpen ? "active" : ""}`}
               onClick={() => setIsOpen(!isOpen)}

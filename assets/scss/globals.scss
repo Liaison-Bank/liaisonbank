@@ -1000,7 +1000,7 @@ header {
     ul {
       // Variables for easy branding updates
       $primary-orange: #ef7f1a;
-      $hover-white: #ffffff;
+      $hover-white: white;
       $mobile-breakpoint: 1280px;
       &.custom-counter-list {
         // counter-reset: service-item;
@@ -1050,6 +1050,7 @@ header {
           color: #7c7c7b;
           text-decoration: none;
           font-weight:600;
+          // letter-spacing: 0.5px;
         }
         button{
           color:#7c7c7b;
@@ -1057,9 +1058,13 @@ header {
         }
         &.has-submenu {
           position: relative;
-           font-weight:600;
+          font-weight:600;
           &:hover {
             .mega-menu {
+              opacity: 1;
+              visibility: visible;
+            }
+             ~ .menu-overlay {
               opacity: 1;
               visibility: visible;
             }
@@ -1069,20 +1074,26 @@ header {
           opacity: 0;
           visibility: hidden;
           // background: linear-gradient(0deg, #be2a2a -86.4%, #ef7f1a 94.15%);
-          background:white;
-          width: 100vw;
+          background: #fff;
+          width: calc(100vw - 6vw);
           margin: 0 auto;
           transition: all .3s;
           position: absolute;
           top: 84px;
+          left: -68vw;
           right: 0;
-          left: -70.5vw;
+          border-right: 2px solid $primary-color;
+          border-bottom: 2px solid $primary-color;
+          border-left: 2px solid $primary-color;
         }
         .mega-menu-inner {
           color: #fff;
-          max-width: 1280px;
+          max-width: 100%;
           margin: auto;
-          padding: 2rem 0;
+          padding: 2rem 3rem;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
         }
         .mega-menu-heading {
           text-align: center;
@@ -1101,13 +1112,15 @@ header {
           // display: grid;
           display: flex;
           flex-direction: column;
-          width: 40%;
+          width: 100%;
         }
         .mega-menu-item {
           padding-right: 20px;
           h4 {
             font-size: 1rem;
             margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
           }
           p {
             font-size: 14px;
@@ -1170,6 +1183,22 @@ header {
       background: linear-gradient(0deg, #be2a2a -86.4%, #ef7f1a 94.15%);
     }
   }
+}
+body:has(.has-submenu:hover) .menu-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 12;
 }
 
 .home {
@@ -3014,6 +3043,7 @@ footer {
   h4 {
     color: $primary-color;
     font-size: 1.4rem;
+    // font-weight: 600;
     background: linear-gradient(
       115deg,
       var(--themeht-primary-color),
@@ -3341,7 +3371,7 @@ footer {
       display: block;
       height: 2px;
       width: 50px;
-      background: white;
+      background: $primary-color;
       // background: linear-gradient(0deg, #be2a2a -86.4%, #ef7f1a 94.15%);
       opacity: 1;
       position: absolute;

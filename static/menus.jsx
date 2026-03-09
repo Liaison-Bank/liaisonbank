@@ -3,7 +3,7 @@
 // Header navigation links
 const navLinks = [
   { name: "Home", href: "/", title: "" },
-  { name: "About", href: "/about-us-liaison", title: "About Liaisonbank", alt: "" },
+  { name: "About Us", href: "/about-us-liaison", title: "About Liaisonbank", alt: "" },
   { name: "Our Clients", href: "/client-liaison", title: "Our Clients Liaisonbank", alt: ""  },
   { name: "Completed", href: "/completed-liaison-bank", title: "Completed Liaisonbank", alt: ""  },
   { name: "On Going", href: "/ongoing-liaison-bank", title: "On Going Liaisonbank", alt: ""  },
@@ -15,7 +15,7 @@ const navLinks = [
       { name: "AMC", href: "/amc", title: "AMC", alt: "AMC Liaisonbank",
         submenu2: [
           // { name: "Pest Control", href: "", title: "", alt: "" },
-          { name:"Licenses Renewal", href:"", title: "", alt: ""  },
+          { name:"Licenses Renewal", href:"", title: "", alt: ""  },  
           { name:"PNG Audit and Certification", href:"", title: "", alt: ""  },
           { name:"Fire Audit and Certification", href:"", title: "", alt: ""  },
           { name:"Electric Audit and Certification", href:"", title: "", alt: ""  },
