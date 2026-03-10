@@ -67,7 +67,7 @@ export default function CareersLiaisonPage() {
                 <p>Explore exciting career opportunities with us and become part of a dynamic and growing organization.
                 We are looking for talented and motivated individuals who are eager to contribute their skills and grow professionally.</p>
                 <p className="py-2">Our team is currently expanding, and we are actively seeking candidates for multiple positions across various departments.
-                Please note that all roles are open for recruitment except Accounts and Administrative positions.</p>
+                Please note that all roles are open for recruitment.</p>
                 {/* We are currently expanding our team and are looking to fill all positions (barring Accounts & Admin roles). 
                 If you’re ready to embark on a rewarding career journey, join us and be part of something extraordinary. 
                  */}
