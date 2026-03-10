@@ -63,18 +63,16 @@ export default function CareersLiaisonPage() {
             </div>
             <div className="col-12 col-md-6">
               <h5>Positions Available</h5>
-              <p className="py-2">
+              <div className="py-2">
                 <p>Explore exciting career opportunities with us and become part of a dynamic and growing organization.
                 We are looking for talented and motivated individuals who are eager to contribute their skills and grow professionally.</p>
                 <p className="py-2">Our team is currently expanding, and we are actively seeking candidates for multiple positions across various departments.
                 Please note that all roles are open for recruitment except Accounts and Administrative positions.</p>
-                
-                
                 {/* We are currently expanding our team and are looking to fill all positions (barring Accounts & Admin roles). 
                 If you’re ready to embark on a rewarding career journey, join us and be part of something extraordinary. 
                  */}
-                </p>  
-              <div className="mt-3 col-4 mx-auto">
+                </div>  
+              <div className="mt-2 col-4 text-start">
                 <Link className="themeht-btn primary-btn px-4 py-2" href="https://liaisonbank.frappe.cloud/jobs" target="_blank">
                 Careers List</Link>
               </div>
