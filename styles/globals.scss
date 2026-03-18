@@ -1162,7 +1162,7 @@ header {
         .mega-top{
           display:grid;
           grid-template-columns:repeat(3,1fr);
-          gap:10px 20px;
+          gap:10px;
           margin-bottom:10px;
 
         .pdf-download {
@@ -1264,14 +1264,18 @@ header {
             }
 
             /* SUBMENU */
-
             .mega-submenu {
-                  margin: 0;
-    padding: 0;
+              margin: 0;
+              padding: 0;
+              padding-left: 15px;
               max-height: 0;
               overflow: hidden;
-              transition: max-height 0.3s ease;
-              padding-left: 15px;
+              opacity: 0;
+              transform: translateY(10px);
+              transition: 
+                max-height 0.4s ease,
+                opacity 0.3s ease,
+                transform 0.3s ease;
               // overflow: visible;
               ::-webkit-scrollbar {
                 display: none;
@@ -1279,8 +1283,13 @@ header {
               /* For IE, Edge, and Firefox */
               -ms-overflow-style: none;  /* IE and Edge */
               scrollbar-width: none;  /* Firefox */
+            } 
+            /* HOVER EXPAND */
+            &:hover > .mega-submenu {
+              max-height: 500px; // adjust based on content
+              opacity: 1;
+              transform: translateY(0);
             }
-
             .mega-submenu li {
               padding: 0;
               font-size: 14px;
@@ -1288,13 +1297,7 @@ header {
                   margin-left: 1.2rem;
             }
 
-            /* HOVER EXPAND */
-
-            &:hover > .mega-submenu {
-              max-height: 500px;
-              // border-bottom: 1px solid #808080;
-              transition:max-height .3s ease;
-            }
+           
 
             .mega-submenu-level2 {
               max-height: 0;
@@ -1341,9 +1344,10 @@ header {
 
         /* BOTTOM VALUES */
         .mega-bottom {
-          display: grid;
           grid-template-columns: repeat(3, 1fr);
           padding: 10px;
+          display: grid;
+          gap: 10px;
         }
 
         /* each item */
@@ -1351,14 +1355,16 @@ header {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 6px 3.1rem 6px 0;
+          padding: 6px 2.3rem 6px 0px;
           color: $text-color;
-          &:nth-child(2),
-          &:nth-child(3),
-          &:nth-child(5) {
-            margin: 0;
-            padding: 6px 10px;
-            padding-right: 2rem;
+          &:nth-child(2){
+            padding:6px 1.8rem 6px 0px;
+          }
+          &:nth-child(3) {
+            padding: 6px 1.8rem 6px 10px;
+          }
+          &:nth-child(5){
+            padding: 6px 1.8rem 6px 0px;
           }
         }
 
