@@ -73,7 +73,6 @@ export default function Header() {
                                   const isLargeList = sub.items.length > 4;
                                   return (
                                     <div key={sub.name} className="mega-card">
-
                                       <h4 className="mega-title">
                                         <Link href={sub.href || "#"}>{sub.name}</Link> 
                                         <a
@@ -91,53 +90,53 @@ export default function Header() {
                                           />
                                         </a>
                                       </h4>
-                                     <ul className={`mega-section ${isLargeList ? "has-more" : ""}`}>
-                                        {sub?.items?.map((item, index) => (
-                                          <li
-                                            key={item.name || index}
-                                            className={`mega-item ${item.children ? "has-child" : ""}`}
-                                          >
-                                              <Link href={item?.href || "#"} className="mega-link">
-                                                <span>{item?.name}</span>
-                                              </Link>
+                                      <ul className={`mega-section ${isLargeList ? "has-more" : ""}`}>
+                                          {sub?.items?.map((item, index) => (
+                                            <li
+                                              key={item.name || index}
+                                              className={`mega-item ${item.children ? "has-child" : ""}`}
+                                            >
+                                                <Link href={item?.href || "#"} className="mega-link">
+                                                  <span>{item?.name}</span>
+                                                </Link>
 
-                                              {item?.pdf && (
-                                                <a
-                                                  href={item.pdf}
-                                                  download
-                                                  target="_blank"
-                                                  rel="noopener noreferrer"
-                                                  className="pdf-download"
-                                                >
-                                                  <Image src={pdfIcon} alt="Download PDF" width={16} height={16} />
-                                                </a>
+                                                {item?.pdf && (
+                                                  <a
+                                                    href={item.pdf}
+                                                    download
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="pdf-download"
+                                                  >
+                                                    <Image src={pdfIcon} alt="Download PDF" width={16} height={16} />
+                                                  </a>
+                                                )}
+
+                                              {/* SUBMENU */}
+                                              {item?.children && (
+                                                <ul className="mega-submenu">
+                                                  {item.children.map((child, i) => (
+                                                    <li key={i} 
+                                                    className={`mega-item ${child?.children ? "has-child2" : ""}`}>
+                                                      <Link href={child.href || "#"}>{child.name}</Link>
+                                                        {/* THIRD LEVEL CHILDREN */}
+                                                        {child?.children && (
+                                                          <ul className="mega-submenu-level2">
+                                                            {child.children.map((subChild, j) => (
+                                                              <li key={j}>
+                                                                <Link href={subChild?.href || "#"}>
+                                                                  {subChild?.name}
+                                                                </Link>
+                                                              </li>
+                                                            ))}
+                                                          </ul>
+                                                        )}
+                                                    </li>
+                                                  ))}
+                                                </ul>
                                               )}
-
-                                            {/* SUBMENU */}
-                                            {item?.children && (
-                                              <ul className="mega-submenu">
-                                                {item.children.map((child, i) => (
-                                                  <li key={i} 
-                                                  className={`mega-item ${child?.children ? "has-child2" : ""}`}>
-                                                    <Link href={child.href || "#"}>{child.name}</Link>
-                                                      {/* THIRD LEVEL CHILDREN */}
-                                                      {child?.children && (
-                                                        <ul className="mega-submenu-level2">
-                                                          {child.children.map((subChild, j) => (
-                                                            <li key={j}>
-                                                              <Link href={subChild?.href || "#"}>
-                                                                {subChild?.name}
-                                                              </Link>
-                                                            </li>
-                                                          ))}
-                                                        </ul>
-                                                      )}
-                                                  </li>
-                                                ))}
-                                              </ul>
-                                            )}
-                                          </li>
-                                        ))}
+                                            </li>
+                                          ))}
                                       </ul>
                                     </div>
                                   )
