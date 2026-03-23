@@ -18,7 +18,10 @@ export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const openPopup = () => setIsActive(true);
   const closePopup = () => setIsActive(false);
-
+  
+  const handleMegaScroll = (e) => {
+    e.stopPropagation();
+  };
   return (
     <>
       <header className={`fixed w-full z-50 py-2 transition-all ${isSticky ? "" : ""}`}>
@@ -46,22 +49,34 @@ export default function Header() {
                     <li
                       key={link.name}
                       className={`${hasSubmenu ? "has-submenu" : ""}`}
-                      data-aos={!hasSubmenu ? "fade-down" : undefined}
-                      data-aos-delay={index * 100}
-                      data-aos-duration="800"
+                      // onMouseEnter={() => hasSubmenu && setMenuOpen(true)}
+                      // onMouseLeave={() => hasSubmenu && setMenuOpen(false)}
                     >
                       {link.href ? (
-                        <Link href={link.href}>{link.name}</Link>
+                        <Link href={link.href} 
+                          data-aos="fade-left"
+                          data-aos-delay={index * 100}
+                          data-aos-duration="800"
+                        >
+                          {link.name}
+                        </Link>
                       ) : (
                         <span
                           className="cursor-pointer"
+                          data-aos="fade-left"
+                          data-aos-delay={index * 100}
+                          data-aos-duration="800"
                         >
                           {link.name}
                         </span>
                       )}
 
                       {hasSubmenu && (
-                        <div className={`mega-menu ${menuOpen ? "active" : ""}`}>
+                        <div className={`mega-menu ${menuOpen ? "active" : ""}`}
+                          onWheel={handleMegaScroll}
+                          onTouchMove={(e) => e.stopPropagation()}
+                          onScroll={(e) => e.stopPropagation()} // 🔥 extra safety
+                          >
                           <div className="mega-menu-inner container">
 
                             {/* TOP CARDS */}

@@ -519,6 +519,7 @@ html.lenis {
 html {
   margin:0;
   padding:0;
+  touch-action: manipulation;
   overflow: hidden;
 }
 
@@ -599,6 +600,9 @@ body.home {
       padding: 5rem 0 0;
     }
   }
+}
+body.menu-open {
+  overflow: hidden;
 }
 
 /* ALL OTHER PAGES */
@@ -1138,13 +1142,20 @@ header {
           top: 80px; // match your header height
           left: 0;
           width: 100vw; // full screen width
+          max-height: 100vh;
+          overflow-y: auto;
+          /* 🔥 THIS FIXES YOUR ISSUE */
+          overscroll-behavior: contain;
+          /* smooth scroll */
+          -webkit-overflow-scrolling: touch;
           opacity: 0;
           visibility: hidden;
           transition: all 0.3s ease;
           z-index: 98;
+        
           &.active{
             opacity: 1;
-            visibility: visible;
+            visibility: visible;  
           }
         }
         .mega-menu-inner {
@@ -2826,14 +2837,14 @@ body:has(.has-submenu:hover) .menu-overlay {
 
     .client-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
       justify-content: center;
       gap: 5px;
     }
 
     .client-item {
-      width: 200px;
-      height: 120px;
+      width: 250px;
+      height: 150px;
       background: #ffffff;
       border: 1px solid #eee;
       border-radius: 6px;
@@ -2852,8 +2863,7 @@ body:has(.has-submenu:hover) .menu-overlay {
         max-width: 85%;
         max-height: 70%;
         object-fit: contain;
-
-        // filter: grayscale(100%);
+        filter: grayscale(100%);
         opacity: 0.8;
 
         transition: 

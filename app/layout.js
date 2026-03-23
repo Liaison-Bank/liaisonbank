@@ -2,10 +2,11 @@ import { Barlow } from "next/font/google";
 import LenisScroll from "@/components/LenisScroller/LenisScroll";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DisableZoom from "@/components/DisableZoom";
 import Cursor from "@/components/Cursor";
 import AOSProvider from "@/components/AOSProvider";
 import ReduxProvider from "@/components/ReduxProvider";
-import Script from "next/script"; 
+import Script from "next/script";   
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@flaticon/flaticon-uicons/css/all/all.css";
 import "@fontsource/josefin-sans";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${barlow.className} flex flex-col min-h-screen bg-gray-50`}>
         <ReduxProvider>
+           <DisableZoom />
           <LenisScroll />   {/* Smooth Scroll */}
           <Cursor />
             <AOSProvider>
