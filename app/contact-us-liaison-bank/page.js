@@ -92,8 +92,9 @@ export default function ContactusLiaisonbankPage() {
                 </div>
               </div>
 
-              <div className="col-lg-6 col-md-6 col-sm-12 pt-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
-                <MapSection />
+              <div className="col-lg-6 col-md-6 col-sm-12 pt-4 map" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+                 <div className="pattern-bg"></div>
+                <div className="p-4"><MapSection /></div>
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 pt-4">
                 <div className="block-title">
