@@ -63,13 +63,13 @@ export default function ContactusLiaisonbankPage() {
 
               <div className="col-lg-4 col-md-12 col-sm-12 mb-4">
                 <div className="p-3 bg-light card"  data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-                  <p><strong>Khar (HQ)</strong> <br/>Office No-1 & 2, Ground Floor, <br/>New Apollo CHS,
-                  Next to Farmer Cafe & <br/>Blue Tokai Coffee, 14th Road,
-                  Khar West, <br/>Mumbai-400052.<br/>
+                  <p><strong>Khar (HQ)</strong> <br/>New Apollo CHSL,
+                  Beside Blue Tokai Coffee, <br/>14th Road,
+                  Khar West, Mumbai-400052.<br/>
                   <strong>Landmark</strong> - Domino’s Pizza,14th Road.</p>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-12 col-sm-12 mb-4">
+              <div className="col-lg-4 col-md-12 col-sm-12 mb-4 d-none">
                 <div className="p-3 bg-light card"  data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
                   <p><strong>Bandra </strong> <br/>
                   1103/ 1104, 11th Floor,
@@ -80,23 +80,32 @@ export default function ContactusLiaisonbankPage() {
                   Santacruz (W), Mumbai-400054</p>
                 </div>
               </div>
+               <div className="col-lg-4 col-md-12 col-sm-12 mb-4">
+                <div className="p-3 bg-light card"  data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                  <p>
+                    <strong>Phone</strong> <br/> 
+                    <Link href="tel:+91 91364 43852" >  (+91) 97694 58515</Link> / &nbsp; 
+                    <Link href="tel:+91 91364 43852" >  (+91) 91371 28401</Link> <br/>
+                    <strong>Singapore Phone</strong><br/>
+                    <Link href="tel:+65 9856 0609" >   (+65) 9856 0609 </Link>
+                  </p>
+                  </div>
+                  </div>
+
               <div className="col-lg-4 col-md-12 col-sm-12 mb-4">
                 <div className="p-3 bg-light card"  data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
-                  <p className="pb-4"><strong>Phone</strong> <br/> 
-                    <Link href="tel:+91 91364 43852" > (+91) 91364 43852</Link> / &nbsp; 
-                    <Link href="tel:+91 9321709258" >(+91) 9321709258</Link>
-                  <br/>
-                  </p>
                   <p className="pb-4"><strong>Email</strong> <br/> 
-                  <Link href="mailto:ceo.desk@liaisonbank.com" >ceo.desk@liaisonbank.com</Link></p>
+                  <Link href="mailto:ceo.desk@liaisonbank.com" >ceo.desk@liaisonbank.com</Link> <br/>
+                  <Link href="mailto:info@liaisonbank.com" >info@liaisonbank.com</Link>
+                  </p>
                 </div>
               </div>
 
-              <div className="col-lg-6 col-md-6 col-sm-12 pt-4 map" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+              <div className="col-lg-6 col-md-6 col-sm-12 pt-4 map" data-aos="fade-right" data-aos-duration="600" data-aos-delay="500">
                  <div className="pattern-bg"></div>
                 <div className="p-4"><MapSection /></div>
               </div>
-              <div className="col-lg-6 col-md-6 col-sm-12 pt-4">
+              <div className="col-lg-6 col-md-6 col-sm-12 pt-4"  data-aos="fade-left" data-aos-duration="600" data-aos-delay="600">
                 <div className="block-title">
                   <h3>Leave Us A Message</h3>
                   <h5>Get in touch! We look forward to hearing from you.</h5>
