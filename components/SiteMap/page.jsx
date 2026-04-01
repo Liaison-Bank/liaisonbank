@@ -1,49 +1,76 @@
 import React from "react";
 import Link from "next/link";
 
-
 const Box = ({ children, className = "" }) => (
   <div className={`box ${className}`}>{children}</div>
 );
 
-// 🔁 Recursive renderer (controlled depth)
-const RenderItems = ({ items, depth = 0, maxDepth = 2 }) => {
+// 🔁 Recursive renderer with unique class + full link wrapping
+const RenderItems = ({ items, depth = 0, maxDepth = 2, parentKey = "" }) => {
   if (!items || depth > maxDepth) return null;
 
   return (
-    <div className={`list depth-${depth}`}>
-      {items.map((item, i) => (
-        <div key={i} className="item-group">
-          <Box className={depth === 0 ? "" : "sub-item"}>
-            {item.href ? (
-              <Link href={item.href}>{item.name}</Link>
-            ) : (
-              item.name
-            )}
-          </Box>
+    <div className={`list depth-${depth} parent-${parentKey} ${depth === 0 ? "block" : "hidden group-hover:block"}`}>
+      {items.map((item, i) => {
+        const uniqueClass = `${parentKey}-item-${i}`;
 
-          {/* children support */}
-          {(item.children || item.items) && (
-            <RenderItems
-              items={item.children || item.items}
-              depth={depth + 1}
-              maxDepth={maxDepth}
-            />
-          )}
-        </div>
-      ))}
+        return (
+          <div key={i} className={`item-group ${uniqueClass}`}>
+            <Link href={item.href || "#"} className="block">
+              <Box className={depth === 0 ? "block" : "hidden group-hover:block"}>
+                {item.name}
+              </Box>
+            </Link>
+
+            {/* children support */}
+            {(item.children || item.items) && (
+              <RenderItems
+                items={item.children || item.items}
+                depth={depth + 1}
+                maxDepth={maxDepth}
+                parentKey={uniqueClass}
+              />
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };
 
 export default function SitemapDiagram({ navLinks }) {
-  // -------- SPLIT DATA --------
-
   const home = navLinks.find((x) => x.name === "Home");
 
   const leftLinks = navLinks.filter((x) =>
-    ["About Us", "Completed", "On Going", "Press Release","Contact Us", "CEO's Desk", "Testimonials", "Privacy Policy", "Terms of Service",].includes(x.name)
+    [
+      "About Us",
+      "Completed",
+      "On Going",
+      "Press Release",
+      "Contact Us",
+    ].includes(x.name)
   );
+  const EXTRA_MENU = [
+  "CEO's Desk",
+  "Testimonials",
+  "Privacy Policy",
+  "Terms & Conditions",
+];
+
+const extraLinks = EXTRA_MENU.map((name) => {
+  const item = navLinks.find((x) => x.name === name);
+
+  return (
+    item || {
+      name,
+      href: `/${name
+        .toLowerCase()
+        .replace(/['"]/g, "")
+        .replace(/\s+/g, "-")}`,
+      isStatic: true,
+    }
+  );
+});
 
   const services = navLinks.find((x) => x.name === "Our Services");
 
@@ -62,7 +89,6 @@ export default function SitemapDiagram({ navLinks }) {
 
   return (
     <div className="sitemap">
-      
       {/* HOME */}
       <div className="top col-3 mx-auto">
         <Box className="home">
@@ -71,7 +97,6 @@ export default function SitemapDiagram({ navLinks }) {
       </div>
 
       <div className="level top-row">
-        
         {/* LEFT */}
         <div className="column">
           {leftLinks.map((item, i) => (
@@ -79,6 +104,12 @@ export default function SitemapDiagram({ navLinks }) {
               <Link href={item.href}>{item.name}</Link>
             </Box>
           ))}
+          {extraLinks.map((item, i) => (
+            <Box key={i} className="main">
+              <Link href={item.href}>{item.name}</Link>
+            </Box>
+          ))}
+          
         </div>
 
         {/* SERVICES */}
@@ -86,27 +117,37 @@ export default function SitemapDiagram({ navLinks }) {
           <Box className="main highlight">{services?.name}</Box>
 
           {/* AMC */}
-          <div className="sub">
-            <Box className="sub-title">{amc?.name}</Box>
-            <RenderItems items={amc?.items} maxDepth={1} />
+          <div className="sub sub-amc group">
+            <Box className="sub-title sub-title-amc">{amc?.name}</Box>
+            <div className="sub-list sub-list-amc hidden group-hover:block">
+              <RenderItems items={amc?.items} maxDepth={1} parentKey="amc" />
+            </div>
           </div>
 
           {/* LICENSING */}
-          <div className="sub">
-            <Box className="sub-title">{licensing?.name}</Box>
-            <RenderItems items={licensing?.items} maxDepth={2} />
+          <div className="sub sub-licensing group">
+            <Box className="sub-title sub-title-licensing">{licensing?.name}</Box>
+            <div className="sub-list sub-list-licensing hidden group-hover:block">
+              <RenderItems items={licensing?.items} maxDepth={3} parentKey="licensing" />
+            </div>
           </div>
 
           {/* LIAISONING */}
-          <div className="sub">
-            <Box className="sub-title">{liaisoning?.name}</Box>
-            <RenderItems items={liaisoning?.items} maxDepth={2} />
+          <div className="sub sub-liaisoning group">
+            <Box className="sub-title sub-title-liaisoning">{liaisoning?.name}</Box>
+            <div className="sub-list sub-list-liaisoning hidden group-hover:block">
+              <RenderItems items={liaisoning?.items} maxDepth={3} parentKey="liaisoning" />
+            </div>
           </div>
+
+          {/* SITC */}
           <div className="sub bottom">
-             {sitc?.map((item, i) => (
-              <Box key={i} className="main">
-                {item.name.replace("Equipment Solution Department", "ESD")}
-              </Box>
+            {sitc?.map((item, i) => (
+              <Link key={i} href={item.href || "#"}>
+                <Box className="main">
+                  {item.name.replace("Equipment Solution Department", "ESD")}
+                </Box>
+              </Link>
             ))}
           </div>
         </div>
@@ -114,3 +155,16 @@ export default function SitemapDiagram({ navLinks }) {
     </div>
   );
 }
+
+/*
+✅ Improvements Done:
+- Unique class added for each sub-section (sub-title-amc, sub-title-licensing, etc.)
+- Unique class per item-group using parentKey
+- Hover-based visibility using group + group-hover
+- Entire box clickable using Link wrapper (production safe)
+- Deep hierarchy supported with unique structured class naming
+
+💡 You can now target like:
+.sub-amc:hover .sub-list-amc { display:block }
+.parent-licensing-item-0 { ... }
+*/

@@ -15,9 +15,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null); // Mobile SUbmenu
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isActive, setIsActive] = useState(false);
-  const openPopup = () => setIsActive(true);
-  const closePopup = () => setIsActive(false);
+ 
   
   const handleMegaScroll = (e) => {
     e.stopPropagation();
@@ -263,15 +261,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </header>
-
-      <div className={`search-popup ${isActive ? 'active' : 'inActive'}`}>
-        <button type="button" className="search-popup-close" onClick={closePopup}>✕</button>
-        <form className="search-popup-form">
-          <input type="text" className="search-popup-form-input" placeholder="Type Words Then Enter" />
-          <button className="search-popup-btn"><i className="icon-search"></i></button>
-        </form>
-      </div>
+      </header>   
     </>
   )
 }

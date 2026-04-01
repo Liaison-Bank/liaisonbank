@@ -12,6 +12,8 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function Footer() {
   const pathname = usePathname();
+   const [isActive, setIsActive] = useState(false);
+    const closePopup = () => setIsActive(false);
    const [open, setOpen] = useState(false);
 
   const scrollToTop = () => {
@@ -166,11 +168,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
+      
       {/* Sticky CTA */}
       <div className="sticky-icon" key={pathname}>
         <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-          <a href="tel:#" className="callnow" >
+          <a href="tel:+919769458515" className="callnow" >
             <i className="fi fi-sr-phone-flip" ></i> Call Now
           </a>
         </div>
