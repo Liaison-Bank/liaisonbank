@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import Image from "next/image";
 import ScrollUpList from "@/components/ScrollUpList";
-// import { searchPhrases, suggestions } from "@/lib/data/menus";
+import { searchPhrases, suggestions } from "@/lib/data/menus";
 import HeroSlider from '@/components/HeroSection/HeroSlider';
 // import rightsideBanner from "@/public/complaince.png"
 
@@ -16,7 +16,7 @@ export default function HeroSection() {
     const openPopup = () => setIsActive(true);
     const closePopup = () => setIsActive(false);
 
-    // const router = useRouter();
+    const router = useRouter();
     const [query, setQuery] = useState("");
     // // const [activeIndex, setActiveIndex] = useState(-1);
 
@@ -100,7 +100,7 @@ export default function HeroSection() {
                             <div className="search-input-div">{/* Top Search Input */}
                                 <div className="input-content">
                                     {/* <SearchRotator /> */}
-                                     {/* <ScrollUpList items={searchPhrases} /> */}
+                                     <ScrollUpList items={searchPhrases} />
                                     {/* Search services for you business..
                                      <span class="rotator" aria-hidden="true"><span class="rotator__item"></span></span>
                                       */}
@@ -179,7 +179,7 @@ export default function HeroSection() {
                 <button type="button" className="search-popup-close" onClick={closePopup}>✕</button>
                 <form className="search-popup-form" onSubmit={handleSubmit}>
                     <input type="text" className="search-popup-form-input" placeholder="Type Words Then Enter" 
-                    value={query} 
+                    value={query}  
                     onChange={(e) => { setQuery(e.target.value); setActiveIndex(-1);}}
                     onKeyDown={handleKeyDown}
                     autoFocus />
