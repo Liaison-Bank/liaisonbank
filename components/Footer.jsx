@@ -190,11 +190,128 @@ export default function Footer() {
       <Modal
         isOpen={open}
         onClose={() => setOpen(false)}
-        title="Reusable Modal"
+        title="Enquiry Form"
         width="600px"
       >
-        <p>This is reusable modal content.</p>
-        {/* <button onClick={() => setOpen(false)}>Close</button> */}
+        <form
+          action="forms/propertyenquirenow"
+          method="post"
+          className="email-form"
+        >
+          <div className="row g-3">
+
+            {/* Name */}
+            <div className="col-12">
+              <input
+                type="text"
+                name="name"
+                className="form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+
+            {/* Email */}
+            <div className="col-12">
+              <input
+                type="email"
+                name="email"
+                className="form-control"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+
+            {/* Phone */}
+            <div className="col-12">
+              <input
+                type="tel"
+                name="phone"
+                className="form-control"
+                placeholder="Your Phone"
+                maxLength="10"
+                required
+              />
+            </div>
+
+            {/* Required Services Type */}
+            <div className="col-12">
+              <label htmlFor="serviceType" className="mb-1 fw-semibold">
+                Required Services Type
+              </label>
+              <select
+                name="subject"
+                id="serviceType"
+                className="form-control"
+                required
+              >
+                <option value="">Select Service</option>
+                <option value="AMC">AMC</option>
+                <option value="Licensing">Licensing</option>
+                <option value="Liaisoning">Liaisoning</option>
+                <option value="Electrical">Electrical</option>
+                <option value="PNG (SITC)">PNG (SITC)</option>
+                <option value="Fire (SITC)">Fire (SITC)</option>
+              </select>
+            </div>
+
+            {/* Message */}
+            <div className="col-12">
+              <textarea
+                className="form-control"
+                name="message"
+                rows="4"
+                placeholder="Your Message"
+              ></textarea>
+            </div>
+
+            {/* Submit */}
+            <div className="col-12 text-center">
+              <button type="submit" className="btn btn-primary px-4">
+                Submit
+                <span
+                  className="loader ms-2"
+                  style={{
+                    display: "none",
+                    width: "16px",
+                    height: "16px",
+                    border: "2px solid #fff",
+                    borderTop: "2px solid transparent",
+                    borderRadius: "50%",
+                    displayInlineBlock: "inline-block",
+                    animation: "spin 1s linear infinite",
+                  }}
+                ></span>
+              </button>
+
+              <div className="error-message mt-2 text-danger"></div>
+              <div className="sent-message alert alert-success mt-3 d-none">
+                Your message has been sent. Thank you!
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <style jsx>{`
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          .form-control {
+            border-radius: 10px;
+            padding: 12px;
+          }
+
+          .btn-primary {
+            border-radius: 10px;
+            padding: 10px 30px;
+          }
+        `}</style>
       </Modal>
     </>
   );

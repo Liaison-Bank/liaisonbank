@@ -7,7 +7,7 @@ import useBodyClass from '@/components/useBodyClass'; // Adjust path as needed
 
 // import smallLogo from "@/assets/images/shape-small-1-1.png"
 import welcomeImg from "@/assets/images/group.jpg"
-import ceoImg from "@/assets/images/deva-CEO.jpg"
+import ceoImg from "@/assets/images/teams/Mahadev.webp";
 import ServicesSection from "@/components/ServicesSection";
 import ClientScroller from "@/components/ClientScroller"
 import useFancybox from '@/components/useFancybox';
@@ -99,29 +99,24 @@ const Home = () => {
                     <span className="author-desc" data-aos="fade-left" data-aos-duration="600" data-aos-delay="800">Chief Executive Officer</span>
                   </div>
                 </div>
-                <Link
-                  href="/"
-                  className="themeht-btn primary-btn d-flex align-items-center mr-2 mt-4"
-                  data-aos="fade-left"
-                  data-aos-duration="700"
-                  data-aos-delay="900"
-                >
-                  CEO&apos;s DESK&nbsp;
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    fill="currentColor"
-                    className="bi bi-arrow-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-                    />
-                  </svg>
-                </Link>
+                <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="900">
+                  <Link href="/" className="themeht-btn primary-btn d-flex align-items-center mr-2 mt-4">
+                    CEO&apos;s DESK&nbsp;
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      fill="currentColor"
+                      className="bi bi-arrow-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
