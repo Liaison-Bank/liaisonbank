@@ -7,7 +7,6 @@ import useBodyClass from '@/components/useBodyClass'; // Adjust path as needed
 
 // import smallLogo from "@/assets/images/shape-small-1-1.png"
 import welcomeImg from "@/assets/images/group.jpg"
-import ceoImg from "@/assets/images/teams/Mahadev.webp";
 import ServicesSection from "@/components/ServicesSection";
 import ClientScroller from "@/components/ClientScroller"
 import useFancybox from '@/components/useFancybox';
@@ -86,7 +85,7 @@ const Home = () => {
                 <div className='author-meta d-flex flex-wrap align-items-center'>
                   <div className='col-auto author-img' data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
                     <Image
-                      src={ceoImg}
+                      src="/teams/Mahadev.webp"
                       width={60}
                       height={60}
                       className='rounded-circle'

@@ -13,7 +13,7 @@ function TeamCard({ member }) {
       <div className="rounded-2xl text-center shadow-sm hover:shadow-md transition">
 
         {/* Image Wrapper */}
-        <div className="relative w-full h-[260px] rounded-xl overflow-hidden bg-gray-200">
+        <div className="member-image relative w-full h-[320px] rounded-xl overflow-hidden bg-gray-200">
           <Image
             src={member.image}
             alt={member.name}
@@ -24,7 +24,7 @@ function TeamCard({ member }) {
         </div>
 
         {/* Content */}
-        <div className="mt-4 pb-4">
+        <div className="aboslute mt-4 pb-4">
           <h5 className="text-lg font-semibold text-gray-900">
             {member.name}
           </h5>
@@ -57,7 +57,7 @@ export default function TeamSection() {
       </div>
 
       {/* Desktop Grid */}
-      <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="team-card hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
         {teamData.map((member, index) => (
           <TeamCard key={index} member={member} />
         ))}

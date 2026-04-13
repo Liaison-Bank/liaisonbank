@@ -5,7 +5,7 @@ import Image from "next/image";
 import { testimonials } from "@/lib/data/testimonialList";
 
 export default function TestimonialSlider() {
-  const [itemsPerView, setItemsPerView] = useState(2);
+  const [itemsPerView, setItemsPerView] = useState(1);
   const [curSlide, setCurSlide] = useState(0);
 
   const intervalRef = useRef(null);
@@ -17,7 +17,7 @@ export default function TestimonialSlider() {
       if (window.innerWidth <= 1023) {
         setItemsPerView(1);
       } else {
-        setItemsPerView(2);
+        setItemsPerView(1);
       }
 
       setCurSlide(0);

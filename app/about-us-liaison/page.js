@@ -52,13 +52,40 @@ export default function AboutUsLiaisonPage() {
       <section className="container py-5">
         <div className="row justify-content-center text-center">
           <div className="section-title" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-            <h3>We help you navigate the complexities of licence acquisitions and <br/>take away the burden of uncertainty and time constraints. </h3>
+            <h3>We help you navigate the complexities of licence acquisitions and <br/>
+            take away the burden of uncertainty and time constraints. </h3>
           </div>
          <div className="content-text">
           <div className="row justify-content-center align-items-center">
             <div className="col-lg-6 col-sm-12">
-              <h4 data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">This enables you to direct your attention solely to your business endeavours.</h4>  
-              <p  data-aos="fade-right" data-aos-duration="600" data-aos-delay="500">Liaison Bank was founded in 2007 as Mr. Mahadev Biradar Consulting. Cut to 2024, we have evolved into a versatile and experienced entity as Liaison Bank. In the realm of licensing and liaison services, we stand out as a leading organization, boasting an extensive workforce of highly quality.</p>
+              <h4 data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">
+                From Consultation to Corporate Leadership: Two Decades of Regulatory Excellence
+              </h4>
+              <p data-aos="fade-right" data-aos-duration="600" data-aos-delay="400">
+                At Liaison Bank, we believe that regulatory hurdles should never stand in the way of innovation. 
+                Our primary mission is to simplify the complex world of government permits and licensing, enabling you to direct 
+                your attention solely to your core business endeavors. Whether you are a budding startup or an established 
+                corporation, we take the administrative weight off your shoulders, ensuring that your compliance requirements 
+                are met with precision and speed. By streamlining the licensing process, we allow your team to focus on growth 
+                and strategy rather than paperwork.
+              </p>
+              <p data-aos="fade-right" data-aos-duration="600" data-aos-delay="400">
+                Our foundation is built on nearly two decades of industry expertise. What began in 2007 as 
+                Mr. Mahadev Biradar Consulting has evolved through years of dedicated service into the versatile and experienced
+                entity known today as Liaison Bank. By 2026, we have cemented our reputation as a leading organization in the 
+                licensing and liaison services sector. We take immense pride in our extensive workforce, a team of high-quality 
+                professionals who bring deep technical knowledge and a results-driven approach to every project. 
+                When you partner with us, you aren&apos;t just hiring a consultant, you are gaining a dedicated extension of your 
+                own professional team.
+              </p>
+
+
+              {/* <h4 data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">
+                This enables you to direct your attention solely to your business endeavours.</h4>  
+              <p  data-aos="fade-right" data-aos-duration="600" data-aos-delay="500">
+                Liaison Bank was founded in 2007 as Mr. Mahadev Biradar Consulting. Cut to 2024, we have evolved into a versatile 
+                and experienced entity as Liaison Bank. In the realm of licensing and liaison services, 
+                we stand out as a leading organization, boasting an extensive workforce of highly quality.</p> */}
             </div>
             <div className="col-lg-6 col-sm-12 license-doc">
               <Image
