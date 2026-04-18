@@ -4577,8 +4577,8 @@ body:has(.has-submenu:hover) .menu-overlay {
         }
         &:hover img{
           filter:grayscale(0);
-          transform: scale(1.19);
-          transition: all 0.5s;
+          // transform: scale(1.19);
+          // transition: all 0.5s;
         }
       }
       .image {
