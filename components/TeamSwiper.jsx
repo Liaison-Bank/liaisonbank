@@ -9,8 +9,13 @@ import { teamData } from "@/lib/data/teamData";
 
 function TeamCard({ member }) {
   return (
-    <div className="w-full max-w-sm mx-auto">
-      <div className="rounded-2xl text-center shadow-sm hover:shadow-md transition">
+    <div
+      className="w-full max-w-sm mx-auto"
+     
+    >
+      <div className="rounded-2xl text-center shadow-sm hover:shadow-md transition"  data-aos="fade-up"
+      data-aos-duration="600"
+      data-aos-delay="100">
 
         {/* Image Wrapper */}
         <div className="member-image relative w-full h-[320px] rounded-xl overflow-hidden bg-gray-200">
@@ -24,7 +29,7 @@ function TeamCard({ member }) {
         </div>
 
         {/* Content */}
-        <div className="aboslute mt-4 pb-4">
+        <div className="relative mt-4 pb-4">
           <h5 className="text-lg font-semibold text-gray-900">
             {member.name}
           </h5>
@@ -32,6 +37,7 @@ function TeamCard({ member }) {
             {member.designation}
           </p>
         </div>
+
       </div>
     </div>
   );
@@ -46,7 +52,7 @@ export default function TeamSection() {
         <Swiper
           modules={[A11y]}
           spaceBetween={16}
-          slidesPerView={1.2}
+          slidesPerView={1}
         >
           {teamData.map((member, index) => (
             <SwiperSlide key={index}>

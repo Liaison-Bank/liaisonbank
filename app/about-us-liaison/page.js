@@ -4,6 +4,8 @@ import Link from "next/link";
 import useBodyClass from '@/components/useBodyClass'; // Adjust path as needed
 import license from "@/assets/images/liaisoning-in-real-estate.jpg"
 import licenseService from "@/assets/images/licensing-services.png"
+import commitment from "@/assets/images/commitment.jpg"
+
 import TeamSwiper from "@/components/TeamSwiper";
 // import { teamData } from "@/lib/data/teamData";
 // import PageTitleWave from '@/components/PageTitleWave';
@@ -55,7 +57,7 @@ export default function AboutUsLiaisonPage() {
             <h3>We help you navigate the complexities of licence acquisitions and <br/>
             take away the burden of uncertainty and time constraints. </h3>
           </div>
-         <div className="content-text">
+         <div className="content-text p-4">
           <div className="row justify-content-center align-items-center">
             <div className="col-lg-6 col-sm-12">
               <h4 data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">
@@ -100,49 +102,67 @@ export default function AboutUsLiaisonPage() {
               />
             </div>
           </div>
-           <div className="row justify-content-center align-items-center">
-            <div className="col-lg-6 col-sm-12 licensing-doc">
+
+          <div className="row justify-content-center align-items-center">
+            <div className="col-lg-6 col-sm-12 licensing-doc mx-auto">
               <Image
                 src={licenseService}
                 alt=""
                 width={0}
                 height={0}
-                sizes="100vw"
-                style={{ width: "100%", height: "auto" }}
+                sizes="75vw"
+                style={{ width: "75%", height: "auto" }}
                 priority
                 data-aos="fade-right" data-aos-duration="600" data-aos-delay="600"
               />
             </div>
             <div className="col-lg-6 col-sm-12">
               <div className="our-story-text" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
-              <h3>Our Story</h3>  
-              <p >
-              Founded in 2017 as DBRE India and officially established as Liaison Bank in 2019, our journey began with a clear vision - to simplify business licensing services, regulatory approvals, and compliance management in India. Headquartered in Mumbai, Liaison Bank office is strategically located at Plot 466, New Apollo CHSL, 14th Road, Khar West, beside Blue Tokai Cafe, enabling us to stay closely connected with key regulatory authorities and business hubs.
-              </p>
-              <p >
-              Over the years, Liaison Bank has evolved into a trusted partner for companies seeking seamless support with licenses, permits, and government liaison services across India. Our team comprises experienced architects, interior designers, project managers, and safety supervisors who work collaboratively to manage complex business licensing, documentation, and compliance requirements.
-              </p>
-              <p>
-                With round-the-clock operations and strong coordination with local authorities, we ensure faster approvals, reduced delays, and smooth execution of projects, helping businesses stay compliant and operational without hassle.
-              </p>
+                <h3>Our Story</h3>  
+                <p >
+                Founded in 2017 as DBRE India and officially established as Liaison Bank in 2019, our journey began with a clear vision - to simplify business licensing services, regulatory approvals, and compliance management in India. Headquartered in Mumbai, Liaison Bank office is strategically located at Plot 466, New Apollo CHSL, 14th Road, Khar West, beside Blue Tokai Cafe, enabling us to stay closely connected with key regulatory authorities and business hubs.
+                </p>
+                <p >
+                Over the years, Liaison Bank has evolved into a trusted partner for companies seeking seamless support with licenses, permits, and government liaison services across India. Our team comprises experienced architects, interior designers, project managers, and safety supervisors who work collaboratively to manage complex business licensing, documentation, and compliance requirements.
+                </p>
+                <p>
+                  With round-the-clock operations and strong coordination with local authorities, we ensure faster approvals, reduced delays, and smooth execution of projects, helping businesses stay compliant and operational without hassle.
+                </p>
               </div>
-              <div className="our-commitment-text"  data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
-              <h3>Our Commitment</h3>  
-              <p >
-              With over 16+ years of proven industry experience in licensing, liaisoning, and regulatory compliance services, Liaison Bank has successfully managed and executed a diverse portfolio of projects across multiple sectors. Our expertise spreads starting from educational institutions, healthcare facilities, food and beverage establishments, commercial spaces to residential developments, ensuring seamless approvals, documentation, and end-to-end licensing support. 
-              </p>
-              <p >
-              Our projects are primarily concentrated in Mumbai where we have built a strong reputation for delivering efficient licensing solutions, government approvals, and compliance management services. Liaison Bank is proud to be associated with prestigious organizations and well-known establishments, including Jaslok Hospital, Saifee Hospital, Podar Education Network, Domino’s Pizza, Pizza Hut, Social, Smoke House Deli, Wine Villa Café, Persian Darbar, 5 Spice, and leading real estate developers such as Piramal Realty, Godrej Properties (Godrej Trees & Godrej Two), Supreme Art Veda, Anand Apartment, Pooja Casa, and Orchid Enclave.
-              </p>
-              <p>
-                Our commitment lies in providing reliable, timely, and hassle-free licensing and liaison services, helping businesses navigate complex regulatory frameworks while ensuring full compliance with local authorities. By combining industry expertise, strong government relations, and a client-centric approach, we continue to deliver results that support business growth and operational excellence.
-              </p>
-            </div>
+              
             </div>           
+          </div>
+          <div className="row justify-content-center align-items-center py-4">
+            <div className="col-lg-6 col-sm-12"  data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">
+              <div className="our-commitment-text" >
+                <h3>Our Commitment</h3>  
+                <p >
+                With over 16+ years of proven industry experience in licensing, liaisoning, and regulatory compliance services, Liaison Bank has successfully managed and executed a diverse portfolio of projects across multiple sectors. Our expertise spreads starting from educational institutions, healthcare facilities, food and beverage establishments, commercial spaces to residential developments, ensuring seamless approvals, documentation, and end-to-end licensing support. 
+                </p>
+                <p >
+                Our projects are primarily concentrated in Mumbai where we have built a strong reputation for delivering efficient licensing solutions, government approvals, and compliance management services. Liaison Bank is proud to be associated with prestigious organizations and well-known establishments, including Jaslok Hospital, Saifee Hospital, Podar Education Network, Domino’s Pizza, Pizza Hut, Social, Smoke House Deli, Wine Villa Café, Persian Darbar, 5 Spice, and leading real estate developers such as Piramal Realty, Godrej Properties (Godrej Trees & Godrej Two), Supreme Art Veda, Anand Apartment, Pooja Casa, and Orchid Enclave.
+                </p>
+                <p>
+                  Our commitment lies in providing reliable, timely, and hassle-free licensing and liaison services, helping businesses navigate complex regulatory frameworks while ensuring full compliance with local authorities. By combining industry expertise, strong government relations, and a client-centric approach, we continue to deliver results that support business growth and operational excellence.
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-6 col-sm-12 commitment-doc">
+               <Image
+                src={commitment}
+                alt=""
+                width={0}
+                height={0}
+                sizes="75vw"
+                style={{ width: "75%", height: "500px" }}
+                priority
+                data-aos="fade-left" data-aos-duration="600" data-aos-delay="600"
+              />
+            </div>
           </div>
 
         </div>
-        <div className="team-content">
+        <div className="team-content pt-4">
           <div className="section-title" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
             <h3>Our Team </h3>
           </div>
