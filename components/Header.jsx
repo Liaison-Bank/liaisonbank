@@ -91,7 +91,7 @@ export default function Header() {
                                     <div key={sub.name} className="mega-card">
                                       <h4 className="mega-title">
                                         <Link href={sub.href || "#"}>{sub.name}</Link> 
-                                        <a
+                                        <Link
                                           href={sub.pdf}
                                           download
                                           target="_blank"
@@ -104,7 +104,7 @@ export default function Header() {
                                             width={16}
                                             height={16}
                                           />
-                                        </a>
+                                        </Link>
                                       </h4>
                                       <ul className={`mega-section ${isLargeList ? "has-more" : ""}`}>
                                           {sub?.items?.map((item, index) => (
