@@ -1,30 +1,11 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import {faqData } from "@/lib/data/faqData";
 
 export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState(null);
   const wrapperRef = useRef(null);
-
-  const faqData = [
-    {
-      question: "How do I verify my email?",
-      answer: "Click the verification link sent to your email.",
-    },
-    {
-      question: "My Pen loads infinitely or crashes the browser.",
-      answer:
-        "It's likely an infinite loop in JavaScript. Add ?turn_off_js=true temporarily.",
-    },
-    {
-      question: "How to reset password?",
-      answer: "Use forgot password option from login page.",
-    },
-    {
-      question: "How to contact support?",
-      answer: "Use our support form or email us anytime.",
-    },
-  ];
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -57,7 +38,7 @@ export default function FAQSection() {
   const renderCard = (item, realIndex) => (
     <div
       key={realIndex}
-      className="bg-white rounded-2xl shadow-md border border-gray-200 mb-2 overflow-hidden"
+      className="bg-white rounded-2xl shadow-md border border-gray-200 mb-3 overflow-hidden"
       data-aos="fade-up"
       data-aos-delay={realIndex * 100}
       data-aos-duration="800"

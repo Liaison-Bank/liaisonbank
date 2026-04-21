@@ -79,7 +79,7 @@ export default function HeroSection() {
 
     return (
         <section className="hero-section">
-            <div className="hero-grid container">
+            <div className="hero-grid container px-4">
                 {/* LEFT CONTENT */}
                 <div className="hero-content pt-4">
                     <h1 className="hero-title">
