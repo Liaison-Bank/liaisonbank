@@ -12,8 +12,11 @@ const initialState = {
 const ContactForm = () => {
   const [formData, setFormData] = useState(initialState);
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
-  // ✅ Handle input change
+  // ======================================================
+  // Handle Input Change
+  // ======================================================
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -22,7 +25,6 @@ const ContactForm = () => {
       [name]: value,
     }));
 
-    // Remove error while typing
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -31,11 +33,15 @@ const ContactForm = () => {
     }
   };
 
-  // ✅ Email validator
+  // ======================================================
+  // Email Validation
+  // ======================================================
   const isValidEmail = (email) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  // ✅ Validate form
+  // ======================================================
+  // Form Validation
+  // ======================================================
   const validate = () => {
     const newErrors = {};
     const errorList = [];
@@ -66,17 +72,18 @@ const ContactForm = () => {
     return { newErrors, errorList };
   };
 
-  // ✅ Handle submit
+  // ======================================================
+  // Submit Form
+  // ======================================================
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const { newErrors, errorList } = validate();
 
-    // ❌ If validation fails
     if (errorList.length > 0) {
       setErrors(newErrors);
 
-      await Swal.fire({
+      Swal.fire({
         icon: "error",
         title: "Validation Errors",
         html: `
@@ -91,9 +98,31 @@ const ContactForm = () => {
     }
 
     try {
-      // ✅ Simulate API call (replace with real API)
-      console.log("Form Data:", formData);
+      setLoading(true);
 
+      // ======================================================
+      // API CALL TO RENDER FASTAPI BACKEND
+      // ======================================================
+      const res = await fetch(
+        "https://liaisonbank-backend.onrender.com/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.detail || "Failed to send");
+      }
+
+      // ======================================================
+      // Success Alert
+      // ======================================================
       await Swal.fire({
         icon: "success",
         title: "Successfully Sent!",
@@ -101,21 +130,21 @@ const ContactForm = () => {
         confirmButtonColor: "#3085d6",
       });
 
-      // Reset form
       setFormData(initialState);
       setErrors({});
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Something went wrong",
-        text: "Please try again later.",
+        text: error.message || "Please try again later.",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <form id="contact" onSubmit={handleSubmit} noValidate>
-
       {/* NAME */}
       <div className="form-group">
         <input
@@ -175,10 +204,12 @@ const ContactForm = () => {
         </span>
       </div>
 
+      {/* BUTTON */}
       <div className="form-group">
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Submit"}
+        </button>
       </div>
-
     </form>
   );
 };

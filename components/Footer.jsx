@@ -133,7 +133,14 @@ export default function Footer() {
             </div>
 
             <div className="mb-3 flex items-center gap-2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-              <Image src="/Gmail_Logo_White_512px.png" width={25} height={25} alt="Email" />&nbsp;
+              <Image 
+              src="/Gmail_Logo_White_512px.png" 
+              alt="Email" 
+              width={0}   // Required prop, but overridden by style
+              height={0}  // Required prop, but overridden by style
+              sizes="100vw"
+              style={{ width: '25px', height: '25px' }} 
+            />&nbsp;
               <a href="mailto:ceo.desk@liaisonbank.com" target="_blank">
                 ceo.desk@liaisonbank.com
               </a>
