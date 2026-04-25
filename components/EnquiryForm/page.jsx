@@ -101,12 +101,20 @@ export default function EnquiryForm() {
     try {
       setLoading(true);
 
-      /* Send phone WITHOUT + sign for Frappe validation */
+      /* Format phone to +91 9892021702 */
+      const rawNumber = form.phone_number.replace(/\D/g, "");
+
+      const localNumber = rawNumber.startsWith("91")
+        ? rawNumber.slice(2)
+        : rawNumber;
+
       const payload = {
         ...form,
-        phone_number: form.phone_number.replace(/\+/g, "").replace(/\s/g, ""),
+        phone_number: `+91 ${localNumber}`,
       };
 
+      console.log("Sending Payload:", payload);
+      // return;
       const response = await fetch("/api/enquiry", {
         method: "POST",
         headers: {
@@ -202,12 +210,13 @@ export default function EnquiryForm() {
           <label className="block mb-2">
             Phone Number <span className="text-red-500">*</span>
           </label>
-          <PhoneInput
-            country={"in"}                 // Default India
-            onlyCountries={["in"]}        // Only India
-            disableDropdown={true}        // Hide country selector
-            countryCodeEditable={false}   // Disable editing +91
 
+          <PhoneInput
+            country={"in"}
+            onlyCountries={["in"]}
+            disableDropdown={true}
+            countryCodeEditable={false}
+            enableSearch={false}
             value={form.phone_number}
             onChange={(phone) =>
               setForm({
@@ -215,26 +224,9 @@ export default function EnquiryForm() {
                 phone_number: phone,
               })
             }
-
             inputClass="!w-full !pl-14"
             containerClass="!w-full"
           />
-{/* 
-          <PhoneInput
-            country={"in"}
-            value={form.phone_number}
-            onChange={(phone) =>
-              setForm({
-                ...form,
-                phone_number: phone,
-              })
-            }
-            enableSearch
-            onFocus={() => setCountryDropdownOpen(true)}
-            onBlur={() => setCountryDropdownOpen(false)}
-            inputClass="!w-full !pl-14"
-            containerClass="!w-full"
-          /> */}
         </div>
 
         <div>
