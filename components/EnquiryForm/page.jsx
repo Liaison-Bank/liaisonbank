@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-export default function EnquiryForm() {
+export default function EnquiryForm({ onClose }) {
   const [form, setForm] = useState({
     company_name: "",
     contact_person: "",
